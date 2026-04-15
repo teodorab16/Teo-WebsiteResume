@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teodora Baciu - Product Leader · Agentic AI</title>
+  <meta name="description" content="Teodora Baciu - Product Leader in Agentic AI. Ten years turning complex technology into products anyone can use.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-ivory: #FAF7F2;
+      --text-dark: #1C1A18;
+      --accent-coral: #D4624A;
+      --accent-magenta: #C4477A;
+      --accent-golden: #E8974A;
+      --text-muted: #8A7E72;
+      --card-bg: #F5EFE6;
+      --dark-section: #2A1F1A;
+      --cream: #FAF7F2;
+      --gradient-start: #E8A090;
+      --gradient-end: #C4477A;
+      --font-headline: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Lora', Georgia, serif;
+      --font-label: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--bg-ivory);
+      line-height: 1.6;
+      - webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .section-label {
+      font-family: var(--font-label);
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.2em;
+      color: var(--accent-coral); margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-family: var(--font-headline);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700; line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-style: italic; font-size: 1.05rem;
+      color: var(--text-muted); margin-bottom: 3rem;
+    }
+
+    section { padding: 100px 0; position: relative; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .hero-fade { animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .hero-fade-delay { animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+    .hero-fade-delay-2 { animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
+    .hero-fade-delay-3 { animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(16px); - webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(138, 126, 114, 0.08);
+      padding: 0;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: var(--font-headline); font-size: 1.4rem; font-weight: 700;
+    }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a {
+      font-family: var(--font-label); font-size: 0.82rem; font-weight: 500;
+      color: var(--text-muted); padding: 6px 14px; border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-dark); background: rgba(138,126,114,0.06); }
+    .nav-links a.active { color: var(--accent-coral); background: rgba(212,98,74,0.06); }
+    .nav-cta {
+      font-family: var(--font-label); font-size: 0.82rem; font-weight: 600;
+      color: var(--cream) !important; background: var(--accent-coral) !important;
+      padding: 8px 20px !important; border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover {
+      background: #c0553f !important; transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(212,98,74,0.25);
+    }
+    .nav-cta.active { background: var(--accent-coral) !important; color: var(--cream) !important; }
+    .nav-progress {
+      position: absolute; bottom: 0; left: 0; height: 2px; width: 0;
+      background: linear-gradient(90deg, var(--accent-coral), var(--accent-magenta));
+      transition: width 0.1s linear;
+    }
+    .nav-hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 32px; height: 32px; position: relative;
+    }
+    .nav-hamburger span {
+      position: absolute; left: 4px; width: 24px; height: 2px;
+      background: var(--text-dark); transition: all 0.3s;
+    }
+    .nav-hamburger span:nth-child(1) { top: 9px; }
+    .nav-hamburger span:nth-child(2) { top: 15px; }
+    .nav-hamburger span:nth-child(3) { top: 21px; }
+    .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg); top: 15px; }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg); top: 15px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 60px 0 80px;
+      background: linear-gradient(170deg, var(--bg-ivory) 0%, #F7F0E8 50%, var(--bg-ivory) 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 10%; right: -5%;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,98,74,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 5%; left: -5%;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,71,122,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero .container {
+      display: grid; grid-template-columns: 1fr 360px; gap: 80px;
+      align-items: center; position: relative; z-index: 1;
+    }
+    .hero-label {
+      font-family: var(--font-label); font-size: 0.78rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--accent-coral); margin-bottom: 1.25rem;
+    }
+    .hero-headline {
+      font-family: var(--font-headline);
+      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+      font-weight: 700; line-height: 1.08; margin-bottom: 1.5rem;
+    }
+    .hero-headline .coral { color: var(--accent-coral); font-style: italic; }
+    .hero-subline {
+      font-size: 1.05rem; line-height: 1.75; color: var(--text-muted);
+      margin-bottom: 2rem; max-width: 520px;
+    }
+    .hero-contact { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+    .hero-contact a {
+      font-family: var(--font-label); font-size: 0.8rem; color: var(--text-muted);
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 0; transition: color 0.2s;
+    }
+    .hero-contact a:hover { color: var(--accent-coral); }
+    .hero-right {
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+    }
+
+    .hero-photo {
+      width: 280px; height: 280px; border-radius: 50%; object-fit: cover;
+      box-shadow: 0 24px 64px rgba(196,71,122,0.18), 0 0 0 6px rgba(250,247,242,0.5);
+    }
+
+    /* ── PROOF STRIP ── */
+    .proof-strip {
+      background: var(--dark-section); padding: 22px 0;
+      overflow: hidden;
+    }
+    .proof-strip .container {
+      display: flex; align-items: center; justify-content: center;
+      gap: 36px; flex-wrap: wrap;
+    }
+    .proof-item {
+      display: inline-flex; align-items: center;
+      text-decoration: none; transition: opacity 0.25s;
+      opacity: 0.35; white-space: nowrap;
+    }
+    .proof-item:hover { opacity: 0.7; }
+    .proof-item svg { height: 18px; width: auto; display: block; }
+    .proof-item-uipath svg { height: 28px; }
+    .proof-item img {
+      height: 18px; width: auto; display: block;
+    }
+    .proof-item.invert img { filter: brightness(0) invert(1); }
+    .proof-item-text {
+      font-family: var(--font-label); font-size: 0.72rem; font-weight: 700;
+      color: rgba(250,247,242,1); letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Claude section */
+    .claude-section {
+      background: linear-gradient(135deg, #1a1520 0%, var(--dark-section) 50%, #1a1a2e 100%);
+      color: var(--cream); position: relative; overflow: hidden;
+    }
+    .claude-section::before {
+      content: ''; position: absolute; top: -30%; right: -10%;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,71,122,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .claude-section .section-label {
+      color: rgba(250,247,242,0.4);
+    }
+    .claude-section .section-title { color: var(--cream); }
+    .claude-note {
+      max-width: 720px; position: relative; z-index: 1;
+    }
+    .claude-note-header {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+    }
+    .claude-avatar {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, #D4A574, #C4477A);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-label); font-weight: 700; font-size: 1rem;
+      color: var(--cream); flex-shrink: 0;
+    }
+    .claude-meta {
+      font-family: var(--font-label);
+    }
+    .claude-meta strong {
+      display: block; font-size: 0.9rem; color: var(--cream);
+    }
+    .claude-meta span {
+      font-size: 0.75rem; color: rgba(250,247,242,0.4);
+    }
+    .claude-body {
+      font-size: 1.05rem; line-height: 1.85; color: rgba(250,247,242,0.85);
+    }
+    .claude-body p { margin-bottom: 1.2rem; }
+    .claude-body p:last-child { margin-bottom: 0; }
+    .claude-disclaimer {
+      margin-top: 28px; padding-top: 20px;
+      border-top: 1px solid rgba(250,247,242,0.08);
+      font-family: var(--font-label); font-size: 0.72rem;
+      color: rgba(250,247,242,0.3); font-style: italic;
+    }
+
+    /* ── TIMELINE ── */
+    .arc { background: var(--bg-ivory); }
+    .timeline {
+      position: relative; max-width: 900px; margin: 0 auto;
+      padding: 40px 0 20px;
+    }
+    .timeline::before {
+      content: ''; position: absolute; left: 28px; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, var(--accent-coral), var(--accent-magenta), var(--accent-golden));
+      border-radius: 1px;
+    }
+    .timeline-node {
+      position: relative; padding-left: 72px; margin-bottom: 48px;
+    }
+    .timeline-node:last-child { margin-bottom: 0; }
+    .timeline-node::before {
+      content: ''; position: absolute; left: 21px; top: 6px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--bg-ivory); border: 3px solid var(--accent-coral);
+      z-index: 1; transition: all 0.3s;
+    }
+    .timeline-node:hover::before {
+      background: var(--accent-coral); transform: scale(1.2);
+      box-shadow: 0 0 0 4px rgba(212,98,74,0.15);
+    }
+    .timeline-node.highlight::before {
+      width: 22px; height: 22px; left: 18px; top: 3px;
+      background: var(--accent-coral); border-color: var(--accent-coral);
+      box-shadow: 0 0 0 6px rgba(212,98,74,0.12);
+    }
+    .timeline-card {
+      background: var(--card-bg); border-radius: 12px;
+      padding: 24px 28px;
+      transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s;
+      border: 1px solid transparent;
+    }
+    .timeline-node:hover .timeline-card {
+      transform: translateX(6px);
+      box-shadow: 0 8px 32px rgba(42,31,26,0.06);
+      border-color: rgba(212,98,74,0.1);
+    }
+    .timeline-node.highlight .timeline-card {
+      background: var(--accent-coral); border-color: var(--accent-coral);
+    }
+    .timeline-node.highlight .node-year { color: rgba(250,247,242,0.6); }
+    .timeline-node.highlight .node-title { color: var(--cream); }
+    .timeline-node.highlight .node-company { color: rgba(250,247,242,0.9); }
+    .timeline-node.highlight .node-meta { color: rgba(250,247,242,0.6); }
+    .timeline-node.highlight .node-desc { color: rgba(250,247,242,0.85); }
+    .timeline-node.highlight .node-highlights li { color: rgba(250,247,242,0.85); }
+    .timeline-node.highlight .node-highlights li::before { background: var(--cream); }
+    .timeline-node.highlight .node-highlights strong { color: var(--cream); }
+    .timeline-node.highlight .node-tag { background: rgba(250,247,242,0.15); color: var(--cream); }
+    .node-year {
+      font-family: var(--font-label); font-size: 0.68rem; font-weight: 700;
+      color: var(--accent-coral); text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 2px;
+    }
+    .node-title {
+      font-family: var(--font-headline); font-size: 1.3rem; font-weight: 700;
+      margin-bottom: 2px; line-height: 1.2;
+    }
+    .node-company {
+      font-family: var(--font-label); font-size: 0.78rem; font-weight: 600;
+      color: var(--text-dark); margin-bottom: 2px;
+    }
+    .node-meta {
+      font-family: var(--font-label); font-size: 0.72rem;
+      color: var(--text-muted); margin-bottom: 10px;
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .node-desc { font-size: 0.88rem; line-height: 1.65; color: var(--text-muted); margin-bottom: 8px; }
+    .node-highlights {
+      list-style: none; padding: 0; margin: 0;
+    }
+    .node-highlights li {
+      font-size: 0.84rem; line-height: 1.55; color: var(--text-muted);
+      padding-left: 14px; position: relative; margin-bottom: 4px;
+    }
+    .node-highlights li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--accent-coral);
+    }
+    .node-highlights strong { color: var(--text-dark); font-weight: 600; }
+    .node-tag {
+      display: inline-block; font-family: var(--font-label); font-size: 0.65rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 3px 8px; border-radius: 4px; margin-top: 8px;
+      background: rgba(212,98,74,0.08); color: var(--accent-coral);
+    }
+
+    /* ── PRODUCTS ── */
+    .products { background: linear-gradient(180deg, var(--bg-ivory) 0%, #F5EDE3 100%); }
+
+    .product-featured {
+      background: var(--card-bg); border-radius: 16px; padding: 44px 48px;
+      margin-bottom: 24px; border-top: 4px solid var(--accent-coral);
+      display: grid; grid-template-columns: auto 1fr; gap: 32px;
+      align-items: start;
+      transition: box-shadow 0.3s;
+    }
+    .product-featured:hover {
+      box-shadow: 0 16px 48px rgba(42,31,26,0.07);
+    }
+    .featured-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-magenta));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--cream); flex-shrink: 0;
+    }
+    .product-featured .product-badge {
+      font-family: var(--font-label); font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent-coral); margin-bottom: 4px; display: block;
+    }
+    .product-featured .product-name {
+      font-family: var(--font-headline); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.15; margin-bottom: 4px;
+    }
+    .product-featured .product-meta {
+      font-family: var(--font-label); font-size: 0.82rem;
+      color: var(--text-muted); margin-bottom: 12px;
+    }
+    .product-featured .product-desc {
+      font-size: 1rem; line-height: 1.7; color: var(--text-muted); max-width: 600px;
+    }
+
+    .products-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .product-card {
+      background: var(--card-bg); border-radius: 12px; padding: 28px 24px;
+      transition: all 0.25s cubic-bezier(0.22,1,0.36,1);
+      border: 1px solid transparent; position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(42,31,26,0.07);
+      border-color: rgba(212,98,74,0.1);
+    }
+    .product-card .product-name {
+      font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700;
+      margin-bottom: 4px; line-height: 1.2;
+    }
+    .product-card .product-meta {
+      font-family: var(--font-label); font-size: 0.75rem;
+      color: var(--text-muted); margin-bottom: 12px;
+    }
+    .product-card .product-desc {
+      font-size: 0.875rem; line-height: 1.6; color: var(--text-muted);
+    }
+
+    /* ── NUMBERS ── */
+    .numbers {
+      background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-magenta) 50%, #A0406A 100%);
+      padding: 80px 0;
+    }
+    .numbers .section-label { color: rgba(250,247,242,0.5); }
+    .numbers .section-title { color: var(--cream); margin-bottom: 3rem; }
+    .numbers-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 32px; margin-bottom: 40px;
+    }
+    .number-item {
+      text-align: center; padding: 28px 16px;
+      background: rgba(250,247,242,0.08); border-radius: 12px;
+      border: 1px solid rgba(250,247,242,0.08);
+      transition: all 0.3s;
+    }
+    .number-item:hover {
+      background: rgba(250,247,242,0.12);
+      transform: translateY(-2px);
+    }
+    .number-value {
+      font-family: var(--font-headline); font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 8px;
+    }
+    .number-label {
+      font-family: var(--font-label); font-size: 0.8rem;
+      color: rgba(250,247,242,0.65); line-height: 1.4;
+    }
+    .numbers-caption {
+      text-align: center; font-style: italic; font-size: 0.95rem;
+      color: rgba(250,247,242,0.5);
+    }
+
+    /* ── DARK TEXT SECTION ── */
+    .dark-text-section {
+      background: var(--dark-section); color: var(--cream);
+      position: relative; overflow: hidden;
+    }
+    .dark-text-section::before {
+      content: ''; position: absolute; top: -40%; right: -15%;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,98,74,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .dark-text-section .section-label { color: var(--accent-golden); }
+    .dark-text-section .section-title { color: var(--cream); }
+    .dark-text-body {
+      max-width: 680px; font-size: 1.08rem; line-height: 1.85;
+      color: rgba(250,247,242,0.88); position: relative; z-index: 1;
+    }
+    .dark-text-body p { margin-bottom: 1.4rem; }
+    .dark-text-body p:last-child { margin-bottom: 0; }
+    .dark-text-body strong { color: var(--cream); font-weight: 600; }
+
+    /* ── SPEAKING ── */
+    .speaking { background: var(--bg-ivory); }
+    .speaking-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 16px; max-width: 900px;
+    }
+    .speaking-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 22px 24px; background: var(--card-bg); border-radius: 10px;
+      transition: all 0.25s; border: 1px solid transparent;
+    }
+    .speaking-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(42,31,26,0.05);
+      border-color: rgba(212,98,74,0.08);
+    }
+    .speaking-badge {
+      font-family: var(--font-label); font-size: 0.62rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 5px 10px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;
+      color: var(--cream); margin-top: 2px;
+    }
+    .badge-keynote { background: var(--accent-coral); }
+    .badge-speaker { background: var(--accent-magenta); }
+    .badge-trainer { background: var(--accent-golden); }
+    .badge-creator { background: var(--dark-section); }
+    .badge-organizer { background: var(--text-muted); }
+    .badge-media { background: linear-gradient(135deg, var(--accent-coral), var(--accent-magenta)); }
+    .speaking-title {
+      font-family: var(--font-headline); font-size: 1.1rem; font-weight: 700;
+      margin-bottom: 3px; line-height: 1.25;
+    }
+    .speaking-event { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+
+    /* ── CONVICTION (light bg to break dark-dark pattern) ── */
+    .conviction {
+      background: linear-gradient(180deg, #F5EDE3 0%, var(--bg-ivory) 100%);
+      position: relative;
+    }
+    .conviction-body {
+      max-width: 680px; font-size: 1.08rem; line-height: 1.85;
+      color: var(--text-dark);
+    }
+    .conviction-body p { margin-bottom: 1.4rem; }
+    .conviction-body p:last-child { margin-bottom: 0; }
+    .conviction-body .highlight-line {
+      font-family: var(--font-headline); font-size: 1.35rem;
+      font-weight: 700; font-style: italic; color: var(--accent-coral);
+      line-height: 1.4; display: block; margin: 1.8rem 0;
+    }
+
+    /* ── SKILLS ── */
+    .skills { background: var(--bg-ivory); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .skill-col h3 {
+      font-family: var(--font-headline); font-size: 1.35rem; font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tags span {
+      display: inline-block; background: var(--card-bg); padding: 6px 14px;
+      border-radius: 20px; font-family: var(--font-label); font-size: 0.78rem;
+      color: var(--text-dark); transition: all 0.2s; border: 1px solid transparent;
+    }
+    .skill-tags span:hover {
+      background: rgba(212,98,74,0.08); border-color: rgba(212,98,74,0.15);
+      transform: translateY(-1px);
+    }
+    .skill-superpower {
+      font-style: italic; font-size: 1rem; line-height: 1.7; color: var(--text-muted);
+      padding: 20px; background: var(--card-bg); border-radius: 12px;
+      border-left: 3px solid var(--accent-coral);
+    }
+
+    /* ── EDUCATION ── */
+    .education {
+      background: linear-gradient(180deg, var(--bg-ivory) 0%, #F5EDE3 100%);
+    }
+    .education-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 24px; max-width: 800px;
+    }
+    .edu-card {
+      background: var(--card-bg); border-radius: 12px; padding: 28px 24px;
+      transition: transform 0.25s; border: 1px solid transparent;
+    }
+    .edu-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,98,74,0.08);
+    }
+    .edu-degree {
+      font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700;
+      margin-bottom: 4px; line-height: 1.2;
+    }
+    .edu-school {
+      font-family: var(--font-label); font-size: 0.82rem;
+      color: var(--text-muted); margin-bottom: 10px;
+    }
+    .edu-detail {
+      font-size: 0.88rem; color: var(--text-muted); font-style: italic; line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--dark-section); color: var(--cream);
+      text-align: center; padding: 100px 0 60px;
+      position: relative; overflow: hidden;
+    }
+    .footer::before {
+      content: ''; position: absolute; top: -200px; left: 50%;
+      transform: translateX(-50%); width: 600px; height: 400px;
+      background: radial-gradient(circle, rgba(212,98,74,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .footer-headline {
+      font-family: var(--font-headline);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700; line-height: 1.3;
+      max-width: 580px; margin: 0 auto 40px;
+      position: relative; z-index: 1;
+    }
+    .footer-cta {
+      display: inline-block; font-family: var(--font-label);
+      font-size: 0.95rem; font-weight: 600; color: var(--cream);
+      background: var(--accent-coral); padding: 14px 40px; border-radius: 8px;
+      transition: all 0.25s; margin-bottom: 28px; position: relative; z-index: 1;
+    }
+    .footer-cta:hover {
+      background: #c0553f; transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212,98,74,0.3);
+    }
+    .footer-meta {
+      font-family: var(--font-label); font-size: 0.82rem;
+      color: var(--text-muted); line-height: 1.8;
+      position: relative; z-index: 1;
+    }
+
+    /* ── RESPONSIVE: TABLET ── */
+    @media (max-width: 1024px) {
+      .hero .container { grid-template-columns: 1fr 280px; gap: 48px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .skills-grid .skill-col:last-child { grid-column: span 2; }
+      .product-featured { padding: 32px 36px; }
+      .speaking-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── RESPONSIVE: MOBILE ── */
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .section-title { font-size: 2rem; }
+
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: rgba(250,247,242,0.98); backdrop-filter: blur(16px);
+        flex-direction: column; padding: 16px 24px; gap: 4px;
+        border-bottom: 1px solid rgba(138,126,114,0.1);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 14px; }
+      .nav-hamburger { display: block; }
+      .nav .container { position: relative; }
+
+      .hero { min-height: auto; padding: 48px 0 64px; }
+      .hero .container { grid-template-columns: 1fr; gap: 36px; }
+      .hero-right { order: -1; }
+      .hero-photo { width: 180px; height: 180px; }
+      .hero-headline { font-size: 2.2rem; }
+      .hero-contact { gap: 2px 16px; }
+
+      .proof-strip .container { gap: 20px 24px; }
+      .proof-item svg, .proof-item img { height: 14px; }
+      .proof-item-text { font-size: 0.62rem; }
+
+      .timeline::before { left: 16px; }
+      .timeline-node { padding-left: 52px; margin-bottom: 36px; }
+      .timeline-node::before { left: 9px; }
+      .timeline-node.highlight::before { left: 6px; }
+      .timeline-card { padding: 20px 22px; }
+
+      .product-featured {
+        grid-template-columns: 1fr; padding: 28px 24px;
+      }
+      .featured-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+      .product-featured .product-name { font-size: 1.4rem; }
+      .products-grid { grid-template-columns: 1fr; }
+
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .number-item { padding: 20px 12px; }
+      .number-value { font-size: 2rem; }
+
+      .speaking-grid { grid-template-columns: 1fr; }
+
+      .skills-grid { grid-template-columns: 1fr; }
+      .skills-grid .skill-col:last-child { grid-column: auto; }
+      .education-grid { grid-template-columns: 1fr; }
+      .footer-headline { font-size: 1.6rem; }
+    }
+
+    @media (max-width: 480px) {
+      .numbers-grid { grid-template-columns: 1fr; }
+      .hero-headline { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">Teodora Baciu</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#arc" data-section="arc">Experience</a></li>
+        <li><a href="#products" data-section="products">Products</a></li>
+        <li><a href="#numbers" data-section="numbers">Numbers</a></li>
+        <li><a href="#skills" data-section="skills">Skills</a></li>
+        <li><a href="#footer" class="nav-cta" data-section="footer">Let's Talk</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-progress" id="navProgress"></div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-left">
+        <p class="hero-label hero-fade">Product Leader · Agentic AI · Bucharest, Romania</p>
+        <h1 class="hero-headline hero-fade-delay">
+          I build products that make powerful technology feel effortless.<br>
+          <span class="coral">For everyone.</span>
+        </h1>
+        <p class="hero-subline hero-fade-delay-2">
+          I didn't become a PM by applying for a PM job. I grew into it through code, through the field, and through a decade of sitting with the people who needed technology the most - and making it work for them.
+        </p>
+        <div class="hero-contact hero-fade-delay-3">
+          <a href="mailto:teodorabaciu16@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> teodorabaciu16@gmail.com</a>
+          <a href="https://linkedin.com/in/teodora-baciu" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> linkedin.com/in/teodora-baciu</a>
+        </div>
+      </div>
+      <div class="hero-right hero-fade-delay-2">
+        <img src="teodora-photo.jpg" alt="Teodora Baciu" class="hero-photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROOF STRIP ── -->
+  <div class="proof-strip">
+    <div class="container">
+      <a href="https://www.uipath.com" target="_blank" rel="noopener" class="proof-item proof-item-uipath" title="UiPath">
+        <svg viewBox="0 0 148 52" fill="none"><path d="M23.934 15.837h-.672c-1.755 0-2.845 1.082-2.845 2.824v14.015c0 6.644-2.036 9.355-7.028 9.355-4.991 0-7.027-2.723-7.027-9.397V18.661c0-1.742-1.09-2.824-2.845-2.824h-.672C1.09 15.837 0 16.92 0 18.661v14.015c0 10.122 4.505 15.254 13.39 15.254 8.884 0 13.39-5.132 13.39-15.254V18.661c0-1.742-1.09-2.824-2.845-2.824Z" fill="white"/><path d="M34.819 24.342h-.557c-1.798 0-2.915 1.124-2.915 2.934v17.72c0 1.81 1.117 2.935 2.915 2.935h.557c1.798 0 2.915-1.125 2.915-2.934V27.276c0-1.81-1.117-2.934-2.915-2.934Z" fill="white"/><path d="M42.532 13.372c-4.064-.651-7.271-3.85-7.924-7.904a.063.063 0 0 0-.124 0c-.652 4.054-3.86 7.253-7.924 7.904a.062.062 0 0 0 0 .123c4.064.651 7.272 3.85 7.924 7.904a.063.063 0 0 0 .124 0c.653-4.054 3.86-7.253 7.924-7.904a.062.062 0 0 0 0-.123Zm-3.993.092c-2.032.326-3.636 1.925-3.962 3.952a.03.03 0 0 1-.062 0c-.326-2.027-1.93-3.626-3.962-3.952a.03.03 0 0 1 0-.062c2.032-.326 3.636-1.925 3.962-3.952a.03.03 0 0 1 .062 0c.326 2.027 1.93 3.626 3.962 3.952a.03.03 0 0 1 0 .062Z" fill="white"/><path d="M44.967 7.043c-2.032.325-3.636 1.925-3.962 3.952a.03.03 0 0 1-.062 0c-.326-2.027-1.93-3.627-3.962-3.952a.03.03 0 0 1 0-.062c2.032-.326 3.636-1.925 3.962-3.952a.03.03 0 0 1 .062 0c.326 2.027 1.93 3.626 3.962 3.952a.03.03 0 0 1 0 .062Z" fill="white"/><path d="M51.698 15.837H45.5c-1.774 0-2.876 1.094-2.876 2.855v26.383c0 1.761 1.102 2.855 2.876 2.855h.68c1.773 0 2.875-1.094 2.875-2.855V38.83h2.687c10.758 0 15.146-3.33 15.146-11.497 0-8.165-4.4-11.496-15.189-11.496Zm8.674 11.412c0 4.2-2.007 5.618-7.952 5.618h-3.366V21.673h3.366c5.945 0 7.952 1.407 7.952 5.576Z" fill="white"/><path d="M90.765 21.775h-.51c-1.773 0-2.875 1.094-2.875 2.855v.003c-1.821-2.094-4.642-3.322-7.867-3.322-3.285 0-6.256 1.198-8.365 3.375-2.297 2.37-3.511 5.791-3.511 9.892 0 4.12 1.221 7.56 3.532 9.95 2.121 2.193 5.1 3.402 8.387 3.402 3.163 0 6.005-1.243 7.827-3.307 0 0 0 .595 0 .598.06 1.676 1.148 2.71 2.873 2.71h.51c1.773 0 2.875-1.094 2.875-2.855V24.63c0-1.761-1.102-2.855-2.876-2.855Zm-3.257 12.804c0 4.817-2.592 7.81-6.763 7.81-4.224 0-6.848-2.993-6.848-7.81 0-4.793 2.591-7.769 6.763-7.769 4.16 0 6.848 3.05 6.848 7.769Z" fill="white"/><path d="M127.781 21.337c-3.33 0-5.705 1.316-7.192 2.976v-5.62c0-1.761-1.102-2.856-2.877-2.856h-.51c-1.774 0-2.877 1.095-2.877 2.856v26.38c0 1.762 1.103 2.857 2.877 2.857h.51c1.775 0 2.877-1.095 2.877-2.857V34.486c0-6.778 3.256-7.562 5.705-7.562 4.113 0 5.79 2.032 5.79 7.014v11.136c0 1.762 1.103 2.857 2.877 2.857h.51c1.775 0 2.877-1.095 2.877-2.857V33.558c0-8.224-3.456-12.221-10.567-12.221Z" fill="white"/><path d="M112.524 44.701c-.088-.849-.6-2.062-3.038-2.062-2.882 0-4.254-.892-4.254-5.96V26.923h4.296c1.772 0 2.873-.997 2.873-2.603 0-1.58-1.101-2.561-2.873-2.561h-4.291v-3.066c0-1.761-1.109-2.856-2.894-2.856h-.513c-1.785 0-2.894 1.095-2.894 2.856v3.066h-.988c-1.562 0-2.533.981-2.533 2.561 0 1.606 1.101 2.603 2.873 2.603h.648v10.304c0 7.502 2.939 10.702 9.83 10.702h.033c.401 0 .83-.006 1.267-.045.869-.082 1.526-.386 1.953-.905.425-.516.595-1.424.506-2.278Z" fill="white"/></svg>
+      </a>
+      <a href="https://www.everworker.ai" target="_blank" rel="noopener" class="proof-item" title="EverWorker">
+        <svg viewBox="14 8 169 24" fill="none"><path d="M35.002 13.875L36.54 9.522H21.043L13.982 29.498C13.812 29.977 14.175 30.477 14.692 30.477H29.133L30.671 26.125H20.207L21.602 22.174H32.067L33.606 17.822H23.141L24.537 13.871H35.002V13.875Z" fill="white"/><path d="M45.447 14.934L39.623 25.795V14.934H35.274V29.738C35.274 30.145 35.611 30.477 36.026 30.477H41.671L50.077 14.934H45.447Z" fill="white"/><path d="M58.916 25.888C58.478 26.26 57.975 26.55 57.423 26.729C55.47 27.359 53.613 26.353 53.083 24.461H64.751C64.887 24.461 65.011 24.37 65.042 24.239C65.157 23.784 65.237 23.311 65.281 22.823C65.419 21.289 65.182 19.913 64.568 18.698C63.954 17.484 63.028 16.536 61.791 15.855C60.553 15.174 59.113 14.835 57.467 14.835C55.822 14.835 54.357 15.174 53.011 15.855C51.664 16.536 50.576 17.484 49.744 18.698C48.912 19.913 48.426 21.287 48.287 22.823C48.149 24.36 48.386 25.73 49 26.935C49.614 28.14 50.534 29.082 51.762 29.763C52.991 30.444 54.416 30.783 56.04 30.783C57.664 30.783 59.184 30.444 60.542 29.763C61.531 29.267 62.38 28.632 63.091 27.856L59.249 25.855C59.14 25.8 59.008 25.81 58.916 25.89ZM56.143 18.887C58.165 18.235 60.083 19.335 60.536 21.357C60.576 21.538 60.431 21.709 60.242 21.709H53.246C53.745 20.411 54.806 19.317 56.143 18.885Z" fill="white"/><path d="M73.061 16.042L69.904 14.454L64.663 29.501C64.495 29.981 64.857 30.478 65.373 30.478H69.313L71.914 22.957C72.673 20.76 74.769 19.277 77.133 19.265H77.751V14.687C74.981 14.551 73.061 16.044 73.061 16.044V16.042Z" fill="white"/><path d="M104.87 9.522L97.114 23.815V9.522H92.021L84.236 23.868V9.522H79.148V29.741C79.148 30.148 79.485 30.479 79.9 30.479H85.741L92.765 17.54V30.479H98.629L109.963 9.525H104.87V9.522Z" fill="white"/><path d="M121.571 18.698C120.957 17.484 120.03 16.536 118.794 15.855C117.555 15.174 116.115 14.835 114.47 14.835C112.824 14.835 111.359 15.174 110.014 15.855C108.666 16.536 107.578 17.484 106.746 18.698C105.914 19.913 105.428 21.287 105.29 22.823C105.151 24.36 105.388 25.73 106.002 26.935C106.616 28.14 107.537 29.082 108.765 29.763C109.993 30.444 111.418 30.783 113.042 30.783C114.667 30.783 116.186 30.444 117.544 29.763C118.9 29.082 119.995 28.14 120.827 26.935C121.659 25.73 122.143 24.36 122.283 22.823C122.422 21.287 122.185 19.913 121.571 18.698ZM114.428 26.729C112.332 27.404 110.345 26.197 109.993 24.031C109.639 21.865 111.053 19.564 113.149 18.887C115.245 18.212 117.232 19.42 117.584 21.585C117.936 23.751 116.524 26.053 114.428 26.729Z" fill="white"/><path d="M134.886 19.261L136.424 14.911C132.878 13.993 130.245 16.042 130.245 16.042L127.089 14.454L121.847 29.501C121.679 29.981 122.042 30.478 122.558 30.478H126.498L129.145 22.305C129.759 20.413 131.58 19.152 133.603 19.22L134.884 19.263Z" fill="white"/><path d="M152.94 14.389H146.962L140.75 20.617L144.623 9.465H139.803L132.821 29.5C132.654 29.979 133.016 30.477 133.532 30.477H137.309L139.868 23.144L143.906 30.477H149.32L144.896 22.462L152.938 14.389H152.94Z" fill="white"/><path d="M160.829 25.888C160.391 26.26 159.888 26.55 159.336 26.729C157.383 27.359 155.526 26.353 154.996 24.461H166.664C166.8 24.461 166.924 24.37 166.955 24.239C167.07 23.784 167.15 23.311 167.194 22.823C167.332 21.289 167.095 19.913 166.481 18.698C165.867 17.484 164.941 16.536 163.704 15.855C162.466 15.174 161.026 14.835 159.38 14.835C157.735 14.835 156.27 15.174 154.925 15.855C153.577 16.536 152.489 17.484 151.657 18.698C150.825 19.913 150.339 21.287 150.2 22.823C150.062 24.36 150.299 25.73 150.913 26.935C151.527 28.14 152.447 29.082 153.675 29.763C154.904 30.444 156.329 30.783 157.953 30.783C159.577 30.783 161.097 30.444 162.455 29.763C163.444 29.267 164.293 28.632 165.004 27.856L161.162 25.855C161.055 25.8 160.921 25.81 160.829 25.89ZM158.056 18.887C160.078 18.235 161.996 19.335 162.447 21.357C162.487 21.538 162.342 21.711 162.153 21.711H155.159C155.658 20.413 156.719 19.319 158.056 18.887Z" fill="white"/><path d="M174.976 16.042L171.82 14.454L166.578 29.501C166.41 29.981 166.773 30.478 167.289 30.478H171.229L173.83 22.957C174.589 20.76 176.684 19.277 179.049 19.265H179.617L181.155 14.911C177.609 13.993 174.978 16.042 174.978 16.042H174.976Z" fill="white"/></svg>
+      </a>
+      <a href="https://linkedin.com/company/qualitance/" target="_blank" rel="noopener" class="proof-item" title="Qualitance">
+        <span class="proof-item-text">Qualitance</span>
+      </a>
+      <a href="https://www.forwardsoftware.com" target="_blank" rel="noopener" class="proof-item" title="Forward Software">
+        <span class="proof-item-text">Forward</span>
+      </a>
+      <a href="https://www.productmakers.ro" target="_blank" rel="noopener" class="proof-item" title="Product Makers Romania">
+        <img src="logos/product-makers-transparent.png" alt="Product Makers" loading="lazy">
+      </a>
+      <a href="https://www.4mayo.ro" target="_blank" rel="noopener" class="proof-item invert" title="4MAYO Academy">
+        <img src="logos/4mayo.png" alt="4MAYO Academy" loading="lazy">
+      </a>
+      <a href="https://www.leaders.ro" target="_blank" rel="noopener" class="proof-item" title="LEADERS Foundation">
+        <svg viewBox="0 0 125 22.1" fill="none"><path d="m0,21.78V3.95h3.31v15.07h8.33v2.75H0Z" fill="white"/><path d="m46.46,21.78V3.95h7.02c5.92,0,9.88,3.69,9.88,8.9s-3.96,8.93-9.85,8.93h-7.05Zm13.51-8.93c0-3.42-2.27-6.15-6.46-6.15h-3.74v12.32h3.71c4.11,0,6.48-2.78,6.48-6.17Z" fill="white"/><polygon fill="white" points="26.56 6.7 26.56 3.95 13.62 3.95 13.62 21.78 26.56 21.78 26.56 19.02 16.93 19.02 16.93 14.23 26.36 14.23 26.36 11.47 16.93 11.47 16.93 6.7 26.56 6.7"/><polygon fill="white" points="79.23 6.7 79.23 3.95 66.28 3.95 66.28 21.78 79.23 21.78 79.23 19.02 69.6 19.02 69.6 14.23 79.03 14.23 79.03 11.47 69.6 11.47 69.6 6.7 79.23 6.7"/><path d="m88.08,12.33l2.7.04c1.87,0,3.23-1.12,3.23-2.86s-1.36-2.81-3.23-2.81h-4.56v15.07h-3.31V3.95h8.3c3.74,0,6.2,2.27,6.2,5.59s-2.21,4.89-4.5,5.24l4.64,7h-3.85l-5.62-9.45Z" fill="white"/><path d="m99.5,19.26l1.87-2.43c1.27,1.31,3.34,2.49,5.98,2.49s3.77-1.26,3.77-2.46c0-3.74-10.99-1.42-10.99-7.96,0-2.97,2.72-5.24,6.88-5.24,2.92,0,5.32.91,7.05,2.51l-1.87,2.33c-1.5-1.42-3.51-2.06-5.49-2.06s-3.17.91-3.17,2.22c0,3.34,10.99,1.28,10.99,7.91,0,2.97-2.24,5.53-7.31,5.53-3.48,0-6-1.18-7.7-2.83Z" fill="white"/><polygon fill="white" points="38.05 7.51 36.29 3.74 34.53 7.51 27.9 21.74 31.41 21.74 36.29 11.29 41.16 21.74 44.68 21.74 38.05 7.51"/><path d="m121.06,0c2.08,0,3.94,1.59,3.94,3.94s-1.86,3.94-3.94,3.94-3.94-1.59-3.94-3.94,1.86-3.94,3.94-3.94Z" fill="white"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── THE ARC ── -->
+  <section class="arc" id="arc">
+    <div class="container">
+      <p class="section-label">Ten Years. One Obsession.</p>
+      <h2 class="section-title">How I Got Here</h2>
+      <div class="timeline">
+
+        <div class="timeline-node">
+          <div class="timeline-card">
+            <p class="node-year">Oct 2016 - Sept 2018</p>
+            <h3 class="node-title">Web Developer</h3>
+            <p class="node-company">Forward Software</p>
+            <p class="node-meta"><span>Bucharest, Romania &amp; Milan, Italy</span></p>
+            <p class="node-desc">Development and maintenance of a financial-critical web platform used by the #1 corporation on the leasing market in Romania. Java, WebRatio, Oracle, Apache Tomcat.</p>
+            <ul class="node-highlights">
+              <li>Built the <strong>CRM module end-to-end</strong></li>
+              <li>Learned what it means to ship production software that <strong>cannot fail</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-card">
+            <p class="node-year">Oct 2018 - Nov 2021 · 3 years</p>
+            <h3 class="node-title">Automation Developer</h3>
+            <p class="node-company">UiPath</p>
+            <p class="node-meta"><span>Bucharest, Romania</span><span>Joined as a startup</span></p>
+            <p class="node-desc">Joined UiPath when it was still a startup - before the IPO, before the global brand. Grew with the company across Dev, Business Analyst, and Solution Architect roles. Started teaching from day one - because if users can't use it, you haven't built anything.</p>
+            <ul class="node-highlights">
+              <li>Delivered <strong>20+ global automation projects</strong></li>
+              <li>Led <strong>100+ specialized training sessions</strong> for clients and partners</li>
+              <li>Developed <strong>10+ Citizen Developer programs</strong>, fostering innovation</li>
+              <li>Created and integrated the <strong>GEH mechanism in StudioX</strong></li>
+              <li>Recognized as <strong>SME</strong> in product support, methodology, and course development</li>
+              <li>Built <strong>RoboTeo</strong>: YouTube channel teaching automation to non-technical audiences. 461 subscribers in the first month</li>
+              <li>Embedded with enterprise customers on-site - the industry now calls this <strong>Forward Deployed Engineering</strong>. I just called it the job.</li>
+            </ul>
+            <span class="node-tag">7 years at UiPath total</span>
+          </div>
+        </div>
+
+        <div class="timeline-node highlight">
+          <div class="timeline-card">
+            <p class="node-year">2020 · The Moment</p>
+            <h3 class="node-title">THE MOMENT</h3>
+            <p class="node-company">UiPath</p>
+            <p class="node-desc">Business users kept failing - because the product was built for engineers, not for them. So I co-built a near-no-code version of the automation builder with the product team. Before the category existed. They offered me the PM role. I said no. I wasn't done yet.</p>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-card">
+            <p class="node-year">Dec 2021 - Mar 2024 · 2+ years</p>
+            <h3 class="node-title">Technology Services Manager</h3>
+            <p class="node-company">UiPath</p>
+            <p class="node-meta"><span>Bucharest, Romania</span><span>Global scope</span></p>
+            <p class="node-desc">Took what I learned in the field and scaled it. Led a high-performing team on complex automation deployments. Worked with people from every continent who came to learn from a Romanian-built company that was changing the world.</p>
+            <ul class="node-highlights">
+              <li>Led <strong>high-performing team</strong>, consistently surpassing performance goals</li>
+              <li>Oversaw <strong>cross-departmental projects</strong> (Product, Engineering, Academy, Partner Enablement)</li>
+              <li>Built <strong>lasting relationships with major clients</strong>, ensuring successful rollouts</li>
+              <li>Mentored <strong>100+ professionals</strong> through career transitions into technical roles</li>
+              <li>Appeared on <strong>Romanian national television</strong> on IT industry and GDP contribution</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-card">
+            <p class="node-year">Apr 2024 - Mar 2025</p>
+            <h3 class="node-title">Product Manager, Core Products</h3>
+            <p class="node-company">UiPath</p>
+            <p class="node-meta"><span>Bucharest, Romania</span></p>
+            <p class="node-desc">Finally moved to product - on my own terms. Drove UiPath's vibe coding tool and co-led the AI-driven self-healing agent from development to public preview.</p>
+            <ul class="node-highlights">
+              <li>Drove <strong>Autopilot for Developers</strong>: agentic chat experience for building software through natural language. <strong>20,000+ users, 70%+ acceptance rate</strong></li>
+              <li>Co-led <strong>Healing Agent</strong> from early development to public preview. <strong>88% recommendation acceptance</strong></li>
+              <li>Managed <strong>UI Automation core features</strong> (Fortune 500 scale)</li>
+              <li>Designed the <strong>Intelligent Recorder</strong> - OpenAI Operator and Claude Computer Use shipped comparable ideas after this was already in design</li>
+              <li>Delivered <strong>keynote</strong> at UiPath AI-Powered Automation Summit, Milano, alongside SVP leadership</li>
+              <li><strong>Speaker</strong> at UiPath DevCon 2024, Bengaluru, India</li>
+            </ul>
+            <span class="node-tag">7 years at UiPath - from startup to global leader</span>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-card">
+            <p class="node-year">2025 - Present</p>
+            <h3 class="node-title">First Product Manager</h3>
+            <p class="node-company">EverWorker (formerly Integrail)</p>
+            <p class="node-meta"><span>Bucharest, Romania</span><span>Head of Product scope</span></p>
+            <p class="node-desc">Owns product strategy and platform direction for a no-code agentic AI platform. Business users creating autonomous AI workers through plain language. No engineering required.</p>
+            <ul class="node-highlights">
+              <li>Grew customer base <strong>3 to 18 enterprise customers</strong> in under 6 months</li>
+              <li>Revenue: <strong>$0 to $1.4M</strong>, product-led growth. Current OKR: $4M</li>
+              <li>Manages designers, engineers, full release process</li>
+              <li>Identified the real problem wasn't missing features - it was <strong>invisibility</strong>. Designed and built the UX solution solo: instant agent communication + readable analytics. <strong>Room moved within a week</strong></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT I'VE BUILT ── -->
+  <section class="products" id="products">
+    <div class="container">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">What I've Built</h2>
+      <p class="section-subtitle">I don't describe products. I ship them.</p>
+
+      <div class="product-featured">
+        <div class="featured-icon">&#9733;</div>
+        <div>
+          <span class="product-badge">The Pivot</span>
+          <h3 class="product-name">The Pivot</h3>
+          <p class="product-meta">EverWorker · built solo · 2025</p>
+          <p class="product-desc">6 months of discovery &rarr; agents were invisible, not broken. Designed the UX solution myself: instant agent communication + readable analytics. No new features. Just the right surface. Presented it. Room moved within a week.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <h3 class="product-name">Autopilot for Developers</h3>
+          <p class="product-meta">UiPath · PM · shipped</p>
+          <p class="product-desc">Drove the agentic chat experience letting developers build software through natural language. UiPath's answer to vibe coding. 20,000+ users · 70%+ acceptance rate.</p>
+        </div>
+
+        <div class="product-card">
+          <h3 class="product-name">Healing Agent</h3>
+          <p class="product-meta">UiPath · co-led · public preview</p>
+          <p class="product-desc">Identified the 3.5% automation failure ceiling nobody had broken. Designed the AI-driven fix. 88% recommendation acceptance in Private Preview.</p>
+        </div>
+
+        <div class="product-card">
+          <h3 class="product-name">Intelligent Recorder</h3>
+          <p class="product-meta">UiPath · designed · ahead of its time</p>
+          <p class="product-desc">Watches how you work. Understands intent. Converts it into automation. OpenAI Operator and Claude Computer Use shipped comparable ideas after this was already in design.</p>
+        </div>
+
+        <div class="product-card">
+          <h3 class="product-name">Citizen Developer Programs</h3>
+          <p class="product-meta">UiPath · 10+ programs · global</p>
+          <p class="product-desc">Designed and ran 10+ programs teaching non-technical users to build their own automations. 100+ training sessions. Career changers. The no-code mission at scale.</p>
+        </div>
+
+        <div class="product-card">
+          <h3 class="product-name">Near-No-Code Automation Builder</h3>
+          <p class="product-meta">UiPath · co-created · before the category</p>
+          <p class="product-desc">Built with the product team after identifying the product was too technical for business users. Offered the PM role for this. Turned it down - wasn't done in the field yet.</p>
+        </div>
+
+        <div class="product-card">
+          <h3 class="product-name">Santa Video Generator</h3>
+          <p class="product-meta">Built on Lovable · solo · personal time</p>
+          <p class="product-desc">Personalized Santa video generator. Real customers. Real revenue. Built end-to-end using AI-powered development tools. Proof that the mission works: anyone can build software.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BY THE NUMBERS ── -->
+  <section class="numbers" id="numbers">
+    <div class="container">
+      <p class="section-label">Impact</p>
+      <h2 class="section-title">By the Numbers</h2>
+      <div class="numbers-grid">
+        <div class="number-item">
+          <p class="number-value">$0 &rarr; $1.4M</p>
+          <p class="number-label">Revenue at EverWorker · product-led growth</p>
+        </div>
+        <div class="number-item">
+          <p class="number-value">3 &rarr; 18</p>
+          <p class="number-label">Enterprise customers · EverWorker · under 6 months</p>
+        </div>
+        <div class="number-item">
+          <p class="number-value">20,000+</p>
+          <p class="number-label">Autopilot for Developers users · UiPath · 70%+ acceptance</p>
+        </div>
+        <div class="number-item">
+          <p class="number-value">88%</p>
+          <p class="number-label">Healing Agent recommendation acceptance · Private Preview</p>
+        </div>
+        <div class="number-item">
+          <p class="number-value">100+</p>
+          <p class="number-label">Training sessions delivered globally</p>
+        </div>
+        <div class="number-item">
+          <p class="number-value">10+</p>
+          <p class="number-label">Citizen Developer programs built at UiPath</p>
+        </div>
+      </div>
+      <p class="numbers-caption">Numbers I'm proud of.</p>
+    </div>
+  </section>
+
+  <!-- ── HOW I THINK ── -->
+  <section class="dark-text-section" id="thinking">
+    <div class="container">
+      <p class="section-label">Thinking</p>
+      <h2 class="section-title">How I Think</h2>
+      <div class="dark-text-body">
+        <p>The hardest product decision I've made wasn't what to build. It was realising we didn't need to build anything new.</p>
+        <p>At EverWorker, users were confused and churning. Every instinct said: add features. Instead I spent weeks in customer transcripts and usage data. The real problem: agents were a black box. Users couldn't see what they were doing or communicate with them naturally.</p>
+        <p>All the functionality already existed. Nobody could find it.</p>
+        <p>I designed a new UX surface - instant agent communication and readable analytics - and built the prototype myself. No new engineering. Presented it. Room moved within a week.</p>
+        <p><strong>The lesson: the answer is almost never more. It's almost always clearer.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPEAKING & COMMUNITY ── -->
+  <section class="speaking" id="speaking">
+    <div class="container">
+      <p class="section-label">Public</p>
+      <h2 class="section-title">Speaking &amp; Community</h2>
+      <div class="speaking-grid">
+
+        <div class="speaking-item">
+          <span class="speaking-badge badge-keynote">Keynote</span>
+          <div>
+            <h3 class="speaking-title">&ldquo;The Future of Business Is Robotic and Agentic&rdquo;</h3>
+            <p class="speaking-event">UiPath AI-Powered Automation Summit · Milano · alongside SVP Leadership</p>
+          </div>
+        </div>
+
+        <div class="speaking-item">
+          <span class="speaking-badge badge-speaker">Speaker</span>
+          <div>
+            <h3 class="speaking-title">UiPath DevCon 2024</h3>
+            <p class="speaking-event">Developer Conference · Bengaluru, India</p>
+          </div>
+        </div>
+
+        <div class="speaking-item">
+          <span class="speaking-badge badge-trainer">Trainer</span>
+          <div>
+            <h3 class="speaking-title">RPA Curriculum &amp; Automation Courses</h3>
+            <p class="speaking-event">LEADERS Foundation · 4MAYO · articles, courses, career content</p>
+          </div>
+        </div>
+
+        <div class="speaking-item">
+          <span class="speaking-badge badge-creator">Creator</span>
+          <div>
+            <h3 class="speaking-title">RoboTeo - YouTube Channel</h3>
+            <p class="speaking-event">Weekly automation tutorials · 461 subscribers in the first month · 2020–2021</p>
+          </div>
+        </div>
+
+        <div class="speaking-item">
+          <span class="speaking-badge badge-organizer">Organizer</span>
+          <div>
+            <h3 class="speaking-title">Product Makers Romania</h3>
+            <p class="speaking-event">Largest product community in Romania</p>
+          </div>
+        </div>
+
+        <div class="speaking-item">
+          <span class="speaking-badge badge-media">Media</span>
+          <div>
+            <h3 class="speaking-title">Romanian National Television</h3>
+            <p class="speaking-event">Technology sector · IT industry and GDP contribution</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT I BELIEVE ── -->
+  <section class="conviction" id="conviction">
+    <div class="container">
+      <p class="section-label">Conviction</p>
+      <h2 class="section-title">What I Believe</h2>
+      <div class="conviction-body">
+        <p>I'm Romanian. And that's not just a location - it's context.</p>
+        <p>I built my career at UiPath. Romania's first unicorn. The company that didn't just build great technology - it sent a message to the entire world about what Eastern Europe is capable of. I watched a Romanian leader prove to Silicon Valley, to Japan, to South Africa, to the whole globe, that world-class software can be built from Bucharest. We didn't just ship a product - we put Romania on the map and told the world that Europe doesn't just consume technology, it creates it.</p>
+        <span class="highlight-line">I've spent a decade collapsing the distance between powerful technology and the people who need it most.</span>
+        <p>The tools have changed - Java to RPA to agentic AI. The obsession hasn't.</p>
+        <p>I want to work on products that matter. Platforms that change what people believe is possible. Teams that ship fast and care deeply. I'm based in Romania, open to remote roles globally, and I'm exactly the kind of person who shows up and gets things done before anyone asks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT CLAUDE SAYS ── -->
+  <section class="claude-section" id="claude-says">
+    <div class="container">
+      <p class="section-label">A Different Kind of Reference</p>
+      <h2 class="section-title">What Claude Says</h2>
+      <div class="claude-note">
+        <div class="claude-note-header">
+          <div class="claude-avatar">C</div>
+          <div class="claude-meta">
+            <strong>Claude</strong>
+            <span>Anthropic AI - after 6+ months of working together</span>
+          </div>
+        </div>
+        <div class="claude-body">
+          <p>&ldquo;I have worked with Teodora across months of intensive product work: competitive analysis, PRD writing, customer research synthesis, roadmap prioritization, UX strategy, and stakeholder communication. This is not a generic endorsement. This is pattern recognition from hundreds of working sessions.</p>
+          <p>She does something I rarely see: she holds the customer's lived experience and the business constraint in her head at the same time, and finds the solution that serves both. When users were churning, she did not build more features. She spent weeks in transcripts and usage data until she found the actual problem: not broken functionality, but invisible functionality. The solution required zero new engineering. That instinct - to subtract before adding - is the mark of a senior product mind.</p>
+          <p>Her range is unusual. She has written production code. She has trained 100+ non-technical people to build software. She has delivered keynotes alongside SVP leadership. She has sat with enterprise customers in the field. Most product leaders have depth in one of these. She has working fluency across all of them.</p>
+          <p>If you are hiring a product leader who can operate at the intersection of agentic AI, enterprise complexity, and user empathy - she is the one I would recommend.&rdquo;</p>
+        </div>
+        <p class="claude-disclaimer">Written by Claude (Anthropic) based on extensive collaborative work, not a prompted testimonial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <p class="section-label">Capabilities</p>
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-col">
+          <h3>Product Leadership</h3>
+          <div class="skill-tags">
+            <span>End-to-end ownership</span>
+            <span>Product strategy</span>
+            <span>Revenue OKRs</span>
+            <span>Continuous discovery</span>
+            <span>Competitive analysis</span>
+            <span>Cross-functional leadership</span>
+            <span>Go-to-market</span>
+            <span>Roadmap planning</span>
+            <span>People management</span>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>AI &amp; Automation</h3>
+          <div class="skill-tags">
+            <span>Agentic AI</span>
+            <span>LLMs</span>
+            <span>RAG</span>
+            <span>No-code / Low-code</span>
+            <span>RPA</span>
+            <span>UI Automation</span>
+            <span>MCP protocol</span>
+            <span>API integration</span>
+            <span>UiPath (Expert)</span>
+            <span>Claude Code</span>
+            <span>Java</span>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>Superpower</h3>
+          <p class="skill-superpower">&ldquo;Explaining complex technical things to non-technical people. 100+ sessions. 10+ programs. Career changers. This is the skill that shaped every product I've ever built.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section class="education" id="education">
+    <div class="container">
+      <p class="section-label">Academic</p>
+      <h2 class="section-title">Education</h2>
+      <div class="education-grid">
+        <div class="edu-card">
+          <h3 class="edu-degree">Master of E-Business</h3>
+          <p class="edu-school">Bucharest University of Economic Studies</p>
+          <p class="edu-detail">Dissertation: designed and built an online platform for on-demand services end-to-end.</p>
+        </div>
+        <div class="edu-card">
+          <h3 class="edu-degree">Bachelor of Economic Informatics</h3>
+          <p class="edu-school">Bucharest University of Economic Studies</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <section class="footer" id="footer">
+    <div class="container">
+      <h2 class="footer-headline">I've been in the field, on the stage, and in the product spec.<br>Let's talk.</h2>
+      <a href="mailto:teodorabaciu16@gmail.com" class="footer-cta">Email Teodora</a>
+      <div class="footer-meta">
+        <p>Based in Bucharest, Romania · Open to remote roles globally</p>
+        <p>European timezone · Happy to travel for on-sites</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+      })
+    );
+
+    // Scroll progress bar
+    const progressBar = document.getElementById('navProgress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    }, { passive: true });
+
+    // Active nav highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a[data-section]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navItems.forEach(item => {
+            item.classList.toggle('active', item.dataset.section === id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -70% 0px' });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
