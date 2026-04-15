@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teodora Baciu - CV</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+    :root {
+      --text: #1C1A18;
+      --coral: #C95D5A;
+      --magenta: #C4477A;
+      --muted: #8A7E72;
+      --card: #F5EFE6;
+      --dark: #2A1F1A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 12mm 16mm 10mm;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      font-size: 7.5pt;
+      line-height: 1.38;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--coral);
+    }
+
+    .header-left h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22pt;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .header-left .subtitle {
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--coral);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .header-left .tagline {
+      font-family: 'Lora', serif;
+      font-size: 8pt;
+      font-style: italic;
+      color: var(--muted);
+      max-width: 380px;
+      line-height: 1.45;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 7.5pt;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .header-right a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .header-right .website {
+      display: inline-block;
+      margin-top: 4px;
+      font-weight: 700;
+      font-size: 8pt;
+      color: var(--coral);
+    }
+
+    .header-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 6px;
+      float: right;
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 8px; }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--coral);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 5px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #E8D8C8;
+    }
+
+    /* ── EXPERIENCE ── */
+    .role {
+      margin-bottom: 7px;
+      page-break-inside: avoid;
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .role-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 10pt;
+      font-weight: 700;
+    }
+
+    .role-company {
+      font-weight: 700;
+      color: var(--coral);
+    }
+
+    .role-dates {
+      font-size: 7.5pt;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .role-meta {
+      font-size: 7.5pt;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .role-intro {
+      font-family: 'Lora', serif;
+      font-size: 8pt;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .role ul {
+      padding-left: 14px;
+      margin: 0;
+    }
+
+    .role li {
+      margin-bottom: 1px;
+      line-height: 1.38;
+    }
+
+    .role li strong {
+      font-weight: 600;
+    }
+
+    .role-tag {
+      display: inline-block;
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: rgba(212,98,74,0.1);
+      color: var(--coral);
+      margin-top: 3px;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: var(--coral);
+      color: white;
+      padding: 7px 12px;
+      border-radius: 6px;
+      margin-bottom: 7px;
+      page-break-inside: avoid;
+    }
+
+    .highlight-box .role-title { color: white; }
+    .highlight-box .role-company { color: rgba(255,255,255,0.8); }
+    .highlight-box .role-dates { color: rgba(255,255,255,0.7); }
+    .highlight-box .role-meta { color: rgba(255,255,255,0.7); }
+    .highlight-box .role-intro { color: rgba(255,255,255,0.9); font-style: normal; }
+
+    /* ── TWO COLUMN ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* ── NUMBERS ── */
+    .stat {
+      text-align: center;
+      padding: 4px 4px;
+      page-break-inside: avoid;
+    }
+    .stats-section {
+      page-break-inside: avoid;
+    }
+
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--coral);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 7pt;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    /* ── SKILLS ── */
+    .skill-group h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .skill-group p {
+      font-size: 8pt;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .skill-group .superpower {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 8pt;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      margin-bottom: 6px;
+    }
+
+    .edu-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+    }
+
+    .edu-item p {
+      font-size: 7.5pt;
+      color: var(--muted);
+    }
+
+    /* ── SPEAKING ── */
+    .speaking-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .speaking-item .title {
+      font-weight: 600;
+      font-size: 8pt;
+    }
+
+    .speaking-item .detail {
+      font-size: 7.5pt;
+      color: var(--muted);
+    }
+
+    .speaking-badge {
+      font-size: 6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 6px;
+      border-radius: 10px;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .badge-keynote { background: var(--coral); }
+    .badge-speaker { background: var(--magenta); }
+    .badge-trainer { background: #E8974A; }
+    .badge-creator { background: var(--dark); }
+    .badge-organizer { background: var(--muted); }
+    .badge-media { background: linear-gradient(135deg, var(--coral), var(--magenta)); }
+
+    /* ── CLAUDE QUOTE ── */
+    .claude-quote {
+      background: #F5EFE6;
+      border-left: 3px solid var(--coral);
+      padding: 8px 12px;
+      border-radius: 0 6px 6px 0;
+      margin-top: 2px;
+      page-break-inside: avoid;
+    }
+    .claude-quote p {
+      font-family: 'Lora', serif;
+      font-size: 7.5pt;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .claude-quote .claude-attr {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6.5pt;
+      font-style: normal;
+      color: var(--coral);
+      margin-top: 3px;
+    }
+
+    /* ── FOOTER ── */
+    .cv-footer {
+      text-align: center;
+      font-size: 7pt;
+      color: var(--muted);
+      border-top: 1px solid #E8D8C8;
+      padding-top: 6px;
+      margin-top: 16px;
+    }
+
+    .cv-footer a {
+      color: var(--coral);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ── PRODUCTS GRID ── */
+    .product-item {
+      margin-bottom: 4px;
+      page-break-inside: avoid;
+    }
+
+    .product-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .product-item .pmeta {
+      font-size: 7pt;
+      color: var(--muted);
+    }
+
+    .product-item p {
+      font-size: 8pt;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-left">
+        <h1>Teodora Baciu</h1>
+        <p class="subtitle">Product Leader - Agentic AI &amp; Enterprise Automation</p>
+        <p class="tagline">I didn't become a PM by applying for a PM job. I grew into it through code, through the field, and through a decade of sitting with the people who needed technology the most - and making it work for them.</p>
+      </div>
+      <div class="header-right">
+        <img src="teodora-photo.jpg" alt="Teodora Baciu" class="header-photo">
+        <br>
+        teodorabaciu16@gmail.com<br>
+        Bucharest, Romania<br>
+        <a href="https://linkedin.com/in/teodora-baciu">linkedin.com/in/teodora-baciu</a><br>
+        <a href="https://teodorabaciu.com" class="website">teodorabaciu.com</a>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="role">
+        <div class="role-header">
+          <span class="role-title">First Product Manager <span class="role-company">- EverWorker</span></span>
+          <span class="role-dates">2025 - Present</span>
+        </div>
+        <p class="role-meta">Bucharest, Romania - Head of Product scope - No-code Agentic AI platform</p>
+        <ul>
+          <li>Owns product strategy, platform direction, designers, engineers, and full release process</li>
+          <li>Grew customer base <strong>3 to 18 enterprise customers</strong> in under 6 months</li>
+          <li>Revenue: <strong>$0 to $1.4M</strong>, product-led growth. Current OKR: $4M</li>
+          <li>Identified the core problem wasn't missing features - it was <strong>invisibility</strong>. Designed and built the UX solution solo: instant agent communication + readable analytics. No new engineering. <strong>Room moved within a week</strong></li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <span class="role-title">Product Manager, Core Products <span class="role-company">- UiPath</span></span>
+          <span class="role-dates">Apr 2024 - Mar 2025</span>
+        </div>
+        <p class="role-meta">Bucharest, Romania</p>
+        <ul>
+          <li>Drove <strong>Autopilot for Developers</strong>: agentic vibe coding tool. <strong>20,000+ users, 70%+ acceptance rate</strong></li>
+          <li>Co-led <strong>Healing Agent</strong> from early development to public preview. <strong>88% recommendation acceptance</strong></li>
+          <li>Managed <strong>UI Automation core features</strong> at Fortune 500 scale</li>
+          <li>Designed the <strong>Intelligent Recorder</strong> - ahead of OpenAI Operator and Claude Computer Use</li>
+          <li>Conducted competitive analyses for UI Automation and Data Collection, shaping company-wide strategy</li>
+          <li><strong>Keynote speaker</strong> at UiPath AI-Powered Automation Summit, Milano (alongside SVP leadership)</li>
+          <li><strong>Speaker</strong> at UiPath DevCon 2024, Bengaluru, India</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <span class="role-title">Technology Services Manager <span class="role-company">- UiPath</span></span>
+          <span class="role-dates">Dec 2021 - Mar 2024</span>
+        </div>
+        <p class="role-meta">Bucharest, Romania - Global scope</p>
+        <ul>
+          <li>Led <strong>high-performing team</strong>, consistently surpassing performance goals in complex automation deployments</li>
+          <li>Oversaw <strong>cross-departmental projects</strong> (Product, Engineering, Academy, Partner Enablement)</li>
+          <li>Built and maintained <strong>lasting relationships with major clients</strong>, ensuring successful rollouts</li>
+          <li>Mentored <strong>100+ professionals</strong> through career transitions into technical roles</li>
+          <li>Appeared on <strong>Romanian national television</strong> on IT industry and GDP contribution</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <div class="role-header">
+          <span class="role-title">THE MOMENT <span class="role-company">- 2020</span></span>
+        </div>
+        <p class="role-intro">Business users kept failing - because the product was built for engineers, not for them. So I co-built a near-no-code version of the automation builder with the product team. Before the category existed. They offered me the PM role. I said no. I wasn't done yet.</p>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <span class="role-title">Automation Developer <span class="role-company">- UiPath</span></span>
+          <span class="role-dates">Oct 2018 - Nov 2021</span>
+        </div>
+        <p class="role-meta">Bucharest, Romania - Joined when UiPath was still a startup, before the IPO</p>
+        <ul>
+          <li>Delivered <strong>20+ global automation projects</strong> across Dev, BA, and Solution Architect roles</li>
+          <li>Led <strong>100+ specialized training sessions</strong> for clients and partners</li>
+          <li>Developed <strong>10+ Citizen Developer programs</strong>, fostering innovation</li>
+          <li>Created and integrated the <strong>GEH mechanism in StudioX</strong></li>
+          <li>Recognized as <strong>SME</strong> in product support, methodology, and course development</li>
+          <li>Embedded with enterprise customers on-site (Forward Deployed Engineering before the title existed)</li>
+          <li>Built <strong>RoboTeo</strong>: YouTube channel teaching automation to non-technical audiences (461 subscribers, first month)</li>
+        </ul>
+        <span class="role-tag">7 years at UiPath - from startup to global leader</span>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <span class="role-title">Web Developer <span class="role-company">- Forward Software</span></span>
+          <span class="role-dates">Oct 2016 - Sept 2018</span>
+        </div>
+        <p class="role-meta">Bucharest, Romania &amp; Milan, Italy</p>
+        <ul>
+          <li>Development and maintenance of a <strong>financial-critical web platform</strong> for the #1 leasing corporation in Romania</li>
+          <li>Built the <strong>CRM module end-to-end</strong>. Java, WebRatio, Oracle, Apache Tomcat</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- BY THE NUMBERS -->
+    <div class="section stats-section">
+      <h2 class="section-title">Impact</h2>
+      <div class="three-col" style="margin-bottom: 4px;">
+        <div class="stat">
+          <p class="stat-value">$0 &rarr; $1.4M</p>
+          <p class="stat-label">Revenue at EverWorker<br>product-led growth</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">3 &rarr; 18</p>
+          <p class="stat-label">Enterprise customers<br>EverWorker, under 6 months</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">20,000+</p>
+          <p class="stat-label">Autopilot for Developers users<br>UiPath, 70%+ acceptance</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">88%</p>
+          <p class="stat-label">Healing Agent acceptance<br>Private Preview</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">100+</p>
+          <p class="stat-label">Training sessions<br>delivered globally</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">10+</p>
+          <p class="stat-label">Citizen Developer programs<br>built at UiPath</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS SHIPPED -->
+    <div class="section">
+      <h2 class="section-title">Products Shipped</h2>
+      <div class="two-col" style="gap: 8px;">
+        <div>
+          <div class="product-item"><h4>The Pivot</h4> <span class="pmeta">- EverWorker, 2025, built solo. UX redesign for agent visibility. No new features, just the right surface.</span></div>
+          <div class="product-item"><h4>Autopilot for Developers</h4> <span class="pmeta">- UiPath. Agentic vibe coding. 20,000+ users, 70%+ acceptance.</span></div>
+          <div class="product-item"><h4>Healing Agent</h4> <span class="pmeta">- UiPath. AI-driven self-healing. 88% acceptance in Private Preview.</span></div>
+          <div class="product-item"><h4>Intelligent Recorder</h4> <span class="pmeta">- UiPath. Intent-based automation. Ahead of OpenAI Operator and Claude Computer Use.</span></div>
+        </div>
+        <div>
+          <div class="product-item"><h4>Citizen Developer Programs</h4> <span class="pmeta">- UiPath. 10+ programs, 100+ sessions globally. Career changers at scale.</span></div>
+          <div class="product-item"><h4>Near-No-Code Builder</h4> <span class="pmeta">- UiPath. Co-created before the category existed. Offered PM role for this.</span></div>
+          <div class="product-item"><h4>Santa Video Generator</h4> <span class="pmeta">- Built on Lovable, solo. Real customers, real revenue.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="three-col">
+        <div class="skill-group">
+          <h4>Product Leadership</h4>
+          <p>End-to-end ownership, Product strategy, Revenue OKRs, Continuous discovery, Competitive analysis, Cross-functional leadership, Go-to-market, Roadmap planning, People management</p>
+        </div>
+        <div class="skill-group">
+          <h4>AI &amp; Automation</h4>
+          <p>Agentic AI, LLMs, RAG, No-code/Low-code, RPA, UI Automation, MCP protocol, API integration, UiPath (Expert), Claude Code, Java</p>
+        </div>
+        <div class="skill-group">
+          <h4>Superpower</h4>
+          <p class="superpower">"Explaining complex technical things to non-technical people. 100+ sessions. 10+ programs. Career changers. This is the skill that shaped every product I've ever built."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPEAKING -->
+    <div class="section">
+      <h2 class="section-title">Speaking &amp; Community</h2>
+      <div class="speaking-item">
+        <div>
+          <span class="title">"The Future of Business Is Robotic and Agentic"</span>
+          <span class="detail"> - UiPath AI-Powered Automation Summit, Milano</span>
+        </div>
+        <span class="speaking-badge badge-keynote">Keynote</span>
+      </div>
+      <div class="speaking-item">
+        <div>
+          <span class="title">UiPath DevCon 2024</span>
+          <span class="detail"> - Developer Conference, Bengaluru, India</span>
+        </div>
+        <span class="speaking-badge badge-speaker">Speaker</span>
+      </div>
+      <div class="speaking-item">
+        <div>
+          <span class="title">RPA Curriculum &amp; Automation Courses</span>
+          <span class="detail"> - LEADERS Foundation, 4MAYO</span>
+        </div>
+        <span class="speaking-badge badge-trainer">Trainer</span>
+      </div>
+      <div class="speaking-item">
+        <div>
+          <span class="title">RoboTeo - YouTube Channel</span>
+          <span class="detail"> - 461 subscribers, weekly automation tutorials</span>
+        </div>
+        <span class="speaking-badge badge-creator">Creator</span>
+      </div>
+      <div class="speaking-item">
+        <div>
+          <span class="title">Product Makers Romania</span>
+          <span class="detail"> - Largest product community in Romania</span>
+        </div>
+        <span class="speaking-badge badge-organizer">Organizer</span>
+      </div>
+      <div class="speaking-item">
+        <div>
+          <span class="title">Romanian National Television</span>
+          <span class="detail"> - IT industry and GDP contribution</span>
+        </div>
+        <span class="speaking-badge badge-media">Media</span>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="two-col">
+        <div class="edu-item">
+          <h4>Master of E-Business</h4>
+          <p>Bucharest University of Economic Studies</p>
+          <p><em>Dissertation: designed and built an online platform for on-demand services end-to-end.</em></p>
+        </div>
+        <div class="edu-item">
+          <h4>Bachelor of Economic Informatics</h4>
+          <p>Bucharest University of Economic Studies</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANGUAGES & HOBBIES -->
+    <div class="section">
+      <h2 class="section-title">Languages &amp; Interests</h2>
+      <p style="font-size: 7.5pt; color: var(--muted);">
+        <strong>Languages:</strong> Romanian (native), English (proficient) &nbsp;&nbsp;|&nbsp;&nbsp;
+        <strong>Interests:</strong> Acting, Snowboarding, Youth education, Volunteering
+      </p>
+    </div>
+
+    <!-- CLAUDE QUOTE -->
+    <div class="section">
+      <h2 class="section-title">What Claude Code Says</h2>
+      <div class="claude-quote">
+        <p>"Teodora doesn't just use AI tools - she builds with them. This entire website and CV were built through our collaboration using Claude Code, from architecture to deployment. She treats AI as a co-builder, not an assistant: she challenges outputs, iterates fast, and ships production-quality work in a single session. She understands prompt engineering, agentic workflows, and AI-assisted development not as concepts she's read about, but as tools she uses daily to build real things. That's rare in product leaders - most talk about AI; she builds with it."</p>
+        <p class="claude-attr">Claude Code (Anthropic) - based on hands-on collaborative building</p>
+      </div>
+    </div>
+
+    <div class="cv-footer" style="margin-top: 8px;">
+      Teodora Baciu - Product Leader - <a href="https://teodorabaciu.com">teodorabaciu.com</a> - teodorabaciu16@gmail.com
+    </div>
+
+</body>
+</html>
