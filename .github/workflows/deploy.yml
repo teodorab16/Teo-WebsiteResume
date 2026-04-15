@@ -19,6 +19,6 @@ jobs:
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'  # folder with your built site
+          path: '.'  # folder with your built site
       - id: deployment
         uses: actions/deploy-pages@v4
