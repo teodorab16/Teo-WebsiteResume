@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Private documents - never commit
+TeodoraBaciu - performance evaluations/
+*.docx
+*.rtf
+
+# Editor files
+.vscode/
+.idea/
+*.swp

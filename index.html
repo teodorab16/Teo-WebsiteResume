@@ -107,7 +107,10 @@
     .nav-cta {
       font-family: var(--font-label); font-size: 0.82rem; font-weight: 600;
       color: var(--cream) !important; background: var(--accent-coral) !important;
-      padding: 8px 20px !important; border-radius: 6px;
+      padding: 0 20px !important; border-radius: 6px;
+      height: 34px;
+      display: inline-flex; align-items: center; justify-content: center;
+      box-sizing: border-box;
       transition: all 0.2s;
     }
     .nav-cta:hover {
@@ -115,6 +118,22 @@
       box-shadow: 0 4px 12px rgba(212,98,74,0.25);
     }
     .nav-cta.active { background: var(--accent-coral) !important; color: var(--cream) !important; }
+    .nav-cv {
+      font-family: var(--font-label); font-size: 0.82rem; font-weight: 600;
+      color: var(--accent-coral) !important; background: transparent !important;
+      padding: 0 16px !important; border-radius: 6px;
+      height: 34px;
+      border: 1.5px solid rgba(212,98,74,0.3);
+      display: inline-flex; align-items: center; gap: 6px;
+      box-sizing: border-box;
+      transition: all 0.2s;
+    }
+    .nav-cv:hover {
+      background: rgba(212,98,74,0.06) !important;
+      border-color: var(--accent-coral);
+      transform: translateY(-1px);
+    }
+    .nav-cv svg { width: 12px; height: 12px; }
     .nav-progress {
       position: absolute; bottom: 0; left: 0; height: 2px; width: 0;
       background: linear-gradient(90deg, var(--accent-coral), var(--accent-magenta));
@@ -137,8 +156,8 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding: 60px 0 80px;
+      min-height: calc(100vh - 60px - 70px); display: flex; align-items: center;
+      padding: 48px 0 56px;
       background: linear-gradient(170deg, var(--bg-ivory) 0%, #F7F0E8 50%, var(--bg-ivory) 100%);
       position: relative; overflow: hidden;
     }
@@ -169,9 +188,17 @@
       font-weight: 700; line-height: 1.08; margin-bottom: 1.5rem;
     }
     .hero-headline .coral { color: var(--accent-coral); font-style: italic; }
+    .hero-verticals {
+      font-family: var(--font-label); font-size: 0.85rem; font-weight: 500;
+      color: var(--text-dark); line-height: 1.55;
+      margin-bottom: 1.25rem; max-width: 540px;
+    }
+    .hero-verticals strong {
+      font-weight: 700; color: var(--accent-coral);
+    }
     .hero-subline {
-      font-size: 1.05rem; line-height: 1.75; color: var(--text-muted);
-      margin-bottom: 2rem; max-width: 520px;
+      font-size: 1rem; line-height: 1.7; color: var(--text-muted);
+      margin-bottom: 1.5rem; max-width: 520px;
     }
     .hero-contact { display: flex; flex-wrap: wrap; gap: 4px 20px; }
     .hero-contact a {
@@ -264,6 +291,94 @@
       font-family: var(--font-label); font-size: 0.72rem;
       color: rgba(250,247,242,0.3); font-style: italic;
     }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 20px; max-width: 920px; margin-bottom: 28px;
+      position: relative; z-index: 1;
+    }
+    .testimonial-human {
+      background: rgba(250,247,242,0.04);
+      border: 1px solid rgba(250,247,242,0.08);
+      border-radius: 12px; padding: 24px 26px;
+    }
+    .testimonial-quote {
+      font-family: var(--font-headline); font-style: italic;
+      font-size: 1.02rem; line-height: 1.55;
+      color: rgba(250,247,242,0.92); margin-bottom: 18px;
+    }
+    .testimonial-attr {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-magenta));
+      color: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-label); font-weight: 700; font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .testimonial-meta strong {
+      display: block; font-family: var(--font-label); font-size: 0.85rem;
+      color: var(--cream); font-weight: 600;
+    }
+    .testimonial-meta span {
+      font-family: var(--font-label); font-size: 0.72rem;
+      color: rgba(250,247,242,0.45);
+    }
+    .testimonials-divider {
+      font-family: var(--font-label); font-size: 0.7rem;
+      color: rgba(250,247,242,0.35); text-transform: uppercase;
+      letter-spacing: 0.2em; margin-bottom: 24px;
+      position: relative; z-index: 1;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .testimonials-divider::before,
+    .testimonials-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: rgba(250,247,242,0.1);
+    }
+
+    /* ── CURRENTLY ── */
+    .currently {
+      background: linear-gradient(180deg, var(--bg-ivory) 0%, #F5EDE3 100%);
+      padding: 56px 0;
+    }
+    .currently-card {
+      max-width: 760px; margin: 0 auto;
+      background: var(--card-bg); border-radius: 14px;
+      padding: 28px 32px;
+      border-left: 4px solid var(--accent-coral);
+      position: relative;
+    }
+    .currently-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 12px;
+    }
+    .currently-pulse {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent-coral);
+      box-shadow: 0 0 0 0 rgba(212,98,74,0.6);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(212,98,74,0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(212,98,74,0); }
+      100% { box-shadow: 0 0 0 0 rgba(212,98,74,0); }
+    }
+    .currently-label {
+      font-family: var(--font-label); font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent-coral);
+    }
+    .currently-date {
+      font-family: var(--font-label); font-size: 0.72rem;
+      color: var(--text-muted); margin-left: auto;
+    }
+    .currently-body {
+      font-family: var(--font-body); font-size: 1rem; line-height: 1.7;
+      color: var(--text-dark);
+    }
+    .currently-body strong { color: var(--accent-coral); font-weight: 600; }
 
     /* ── TIMELINE ── */
     .arc { background: var(--bg-ivory); }
@@ -404,7 +519,34 @@
     .product-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 36px rgba(42,31,26,0.07);
-      border-color: rgba(212,98,74,0.1);
+      border-color: rgba(212,98,74,0.15);
+    }
+    a.product-card, a.product-featured {
+      text-decoration: none; color: inherit; display: block;
+    }
+    a.product-featured { display: grid; }
+    a.product-card .product-name,
+    a.product-featured .product-name {
+      transition: color 0.2s;
+    }
+    a.product-card:hover .product-name,
+    a.product-featured:hover .product-name {
+      color: var(--accent-coral);
+    }
+    .product-card .product-arrow,
+    .product-featured .product-arrow {
+      position: absolute; top: 24px; right: 24px;
+      width: 22px; height: 22px;
+      color: var(--text-muted); opacity: 0; transform: translate(-4px, 4px);
+      transition: all 0.25s;
+    }
+    a.product-card { position: relative; }
+    a.product-card:hover .product-arrow,
+    a.product-featured:hover .product-arrow {
+      opacity: 1; transform: translate(0, 0); color: var(--accent-coral);
+    }
+    .product-featured .product-arrow {
+      top: 32px; right: 32px;
     }
     .product-card .product-name {
       font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700;
@@ -450,6 +592,39 @@
     .numbers-caption {
       text-align: center; font-style: italic; font-size: 0.95rem;
       color: rgba(250,247,242,0.5);
+    }
+
+    /* ── CLIENTS ── */
+    .clients {
+      background: var(--bg-ivory); padding: 80px 0;
+    }
+    .clients .section-subtitle { margin-bottom: 2rem; }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px 28px;
+      max-width: 1000px;
+    }
+    .client-name {
+      font-family: var(--font-headline); font-size: 1.05rem; font-weight: 600;
+      color: var(--text-dark);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(138,126,114,0.12);
+      display: flex; align-items: baseline; gap: 8px;
+      transition: all 0.2s;
+    }
+    .client-name:hover {
+      color: var(--accent-coral);
+      border-color: rgba(212,98,74,0.3);
+    }
+    .client-name .client-tag {
+      font-family: var(--font-label); font-size: 0.62rem; font-weight: 500;
+      color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em;
+      margin-left: auto;
+    }
+    .clients-note {
+      font-family: var(--font-label); font-style: italic; font-size: 0.82rem;
+      color: var(--text-muted); margin-top: 1.5rem;
     }
 
     /* ── DARK TEXT SECTION ── */
@@ -506,6 +681,67 @@
       margin-bottom: 3px; line-height: 1.25;
     }
     .speaking-event { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+
+    /* ── WRITING ── */
+    .writing { background: var(--bg-ivory); }
+    .writing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .writing-card {
+      background: var(--card-bg); border-radius: 12px;
+      padding: 26px 24px;
+      border: 1px solid transparent;
+      transition: all 0.25s; display: block;
+      text-decoration: none; color: inherit;
+      position: relative;
+    }
+    .writing-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(42,31,26,0.06);
+      border-color: rgba(212,98,74,0.12);
+    }
+    .writing-card.placeholder {
+      background: transparent;
+      border: 1.5px dashed rgba(138,126,114,0.25);
+    }
+    .writing-card.placeholder:hover {
+      border-color: rgba(212,98,74,0.3);
+      box-shadow: none; transform: none;
+    }
+    .writing-tag {
+      display: inline-block;
+      font-family: var(--font-label); font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent-coral);
+      background: rgba(212,98,74,0.08);
+      padding: 3px 9px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .writing-card.placeholder .writing-tag {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px dashed rgba(138,126,114,0.3);
+    }
+    .writing-title {
+      font-family: var(--font-headline); font-size: 1.2rem; font-weight: 700;
+      line-height: 1.3; margin-bottom: 8px;
+    }
+    .writing-card.placeholder .writing-title {
+      color: var(--text-muted); font-style: italic;
+    }
+    .writing-excerpt {
+      font-size: 0.88rem; line-height: 1.6; color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .writing-meta {
+      font-family: var(--font-label); font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .writing-coming {
+      font-family: var(--font-label); font-size: 0.85rem;
+      font-style: italic; color: var(--text-muted);
+      text-align: center; margin-top: 28px;
+    }
 
     /* ── CONVICTION (light bg to break dark-dark pattern) ── */
     .conviction {
@@ -604,6 +840,26 @@
       background: #c0553f; transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(212,98,74,0.3);
     }
+    .footer-actions {
+      display: inline-flex; gap: 12px; margin-bottom: 28px;
+      flex-wrap: wrap; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .footer-actions .footer-cta { margin-bottom: 0; }
+    .footer-cv {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-label);
+      font-size: 0.95rem; font-weight: 600; color: var(--cream);
+      background: transparent; padding: 13px 32px; border-radius: 8px;
+      border: 1.5px solid rgba(250,247,242,0.3);
+      transition: all 0.25s;
+    }
+    .footer-cv:hover {
+      background: rgba(250,247,242,0.06);
+      border-color: rgba(250,247,242,0.5);
+      transform: translateY(-2px);
+    }
+    .footer-cv svg { width: 16px; height: 16px; }
     .footer-meta {
       font-family: var(--font-label); font-size: 0.82rem;
       color: var(--text-muted); line-height: 1.8;
@@ -618,6 +874,8 @@
       .skills-grid .skill-col:last-child { grid-column: span 2; }
       .product-featured { padding: 32px 36px; }
       .speaking-grid { grid-template-columns: 1fr; }
+      .writing-grid { grid-template-columns: repeat(2, 1fr); }
+      .clients-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     /* ── RESPONSIVE: MOBILE ── */
@@ -667,6 +925,17 @@
 
       .speaking-grid { grid-template-columns: 1fr; }
 
+      .writing-grid { grid-template-columns: 1fr; }
+      .clients { padding: 60px 0; }
+      .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 8px 16px; }
+      .client-name { font-size: 0.95rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .currently { padding: 40px 0; }
+      .currently-card { padding: 22px 24px; }
+
+      .footer-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+      .footer-actions .footer-cta, .footer-cv { padding: 14px 24px; justify-content: center; }
+
       .skills-grid { grid-template-columns: 1fr; }
       .skills-grid .skill-col:last-child { grid-column: auto; }
       .education-grid { grid-template-columns: 1fr; }
@@ -690,6 +959,7 @@
         <li><a href="#products" data-section="products">Products</a></li>
         <li><a href="#numbers" data-section="numbers">Numbers</a></li>
         <li><a href="#skills" data-section="skills">Skills</a></li>
+        <li><a href="Teodora-Baciu-Resume-2026.pdf" class="nav-cv" download="Teodora-Baciu-Resume-2026.pdf" aria-label="Download Resume"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Resume</a></li>
         <li><a href="#footer" class="nav-cta" data-section="footer">Let's Talk</a></li>
       </ul>
       <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation">
@@ -708,6 +978,9 @@
           I build products that make powerful technology feel effortless.<br>
           <span class="coral">For everyone.</span>
         </h1>
+        <p class="hero-verticals hero-fade-delay-2">
+          <strong>Agentic AI</strong> &middot; <strong>No-code Automation</strong> &middot; <strong>Mid-market Enterprise</strong> &middot; 7 years at UiPath, from startup to global leader
+        </p>
         <p class="hero-subline hero-fade-delay-2">
           I didn't become a PM by applying for a PM job. I grew into it through code, through the field, and through a decade of sitting with the people who needed technology the most - and making it work for them.
         </p>
@@ -748,6 +1021,22 @@
       </a>
     </div>
   </div>
+
+  <!-- ── CURRENTLY ── -->
+  <section class="currently" id="currently">
+    <div class="container">
+      <div class="currently-card">
+        <div class="currently-header">
+          <span class="currently-pulse" aria-hidden="true"></span>
+          <span class="currently-label">Currently</span>
+          <span class="currently-date">Updated May 2026</span>
+        </div>
+        <p class="currently-body">
+          Owning product strategy at <strong>EverWorker</strong>, scaling our agentic AI platform from <strong>$1.4M to $4M ARR</strong>. Spending most of my time in customer transcripts, sharpening the agent-led catalog, and shipping the next UX surface for non-technical builders. Open to conversations about <strong>product leadership roles</strong> at AI-native companies that take Europe seriously.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- ── THE ARC ── -->
   <section class="arc" id="arc">
@@ -795,7 +1084,7 @@
             <p class="node-year">2020 · The Moment</p>
             <h3 class="node-title">THE MOMENT</h3>
             <p class="node-company">UiPath</p>
-            <p class="node-desc">Business users kept failing - because the product was built for engineers, not for them. So I co-built a near-no-code version of the automation builder with the product team. Before the category existed. They offered me the PM role. I said no. I wasn't done yet.</p>
+            <p class="node-desc">Business users kept failing - because the product was built for engineers, not for them. So I co-built <strong>StudioX</strong> with the product team: a near-no-code version of the automation builder, before the no-code category existed. They offered me the PM role. I said no. I wasn't done yet.</p>
           </div>
         </div>
 
@@ -858,11 +1147,12 @@
   <!-- ── WHAT I'VE BUILT ── -->
   <section class="products" id="products">
     <div class="container">
-      <p class="section-label">Portfolio</p>
+      <p class="section-label">Shipping</p>
       <h2 class="section-title">What I've Built</h2>
       <p class="section-subtitle">I don't describe products. I ship them.</p>
 
-      <div class="product-featured">
+      <a href="https://www.everworker.ai" target="_blank" rel="noopener" class="product-featured">
+        <svg class="product-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
         <div class="featured-icon">&#9733;</div>
         <div>
           <span class="product-badge">The Pivot</span>
@@ -870,44 +1160,57 @@
           <p class="product-meta">EverWorker · built solo · 2025</p>
           <p class="product-desc">6 months of discovery &rarr; agents were invisible, not broken. Designed the UX solution myself: instant agent communication + readable analytics. No new features. Just the right surface. Presented it. Room moved within a week.</p>
         </div>
-      </div>
+      </a>
 
       <div class="products-grid">
-        <div class="product-card">
+        <a href="https://www.uipath.com/product/autopilot" target="_blank" rel="noopener" class="product-card">
+          <svg class="product-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           <h3 class="product-name">Autopilot for Developers</h3>
           <p class="product-meta">UiPath · PM · shipped</p>
           <p class="product-desc">Drove the agentic chat experience letting developers build software through natural language. UiPath's answer to vibe coding. 20,000+ users · 70%+ acceptance rate.</p>
-        </div>
+        </a>
 
-        <div class="product-card">
+        <a href="https://docs.uipath.com/agents/automation-cloud/latest/user-guide-ha/what-is-healing-agent" target="_blank" rel="noopener" class="product-card">
+          <svg class="product-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           <h3 class="product-name">Healing Agent</h3>
-          <p class="product-meta">UiPath · co-led · public preview</p>
-          <p class="product-desc">Identified the 3.5% automation failure ceiling nobody had broken. Designed the AI-driven fix. 88% recommendation acceptance in Private Preview.</p>
-        </div>
+          <p class="product-meta">UiPath · co-led · public preview · 2024</p>
+          <p class="product-desc">A truly self-healing agent. Self-healing automation has been my obsession since I co-built the Global Error Handler for StudioX in 2020. The Healing Agent is what that idea became at scale: AI-driven, breaking the 3.5% automation failure ceiling nobody else had. 88% recommendation acceptance in Private Preview.</p>
+        </a>
 
-        <div class="product-card">
+        <!-- TODO: replace href with the actual UiPath Intelligent Recorder URL or remove link if not public -->
+        <a href="#" target="_blank" rel="noopener" class="product-card">
+          <svg class="product-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           <h3 class="product-name">Intelligent Recorder</h3>
           <p class="product-meta">UiPath · designed · ahead of its time</p>
           <p class="product-desc">Watches how you work. Understands intent. Converts it into automation. OpenAI Operator and Claude Computer Use shipped comparable ideas after this was already in design.</p>
-        </div>
+        </a>
 
-        <div class="product-card">
+        <a href="https://www.uipath.com/rpa/what-is-citizen-development" target="_blank" rel="noopener" class="product-card">
+          <svg class="product-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           <h3 class="product-name">Citizen Developer Programs</h3>
           <p class="product-meta">UiPath · 10+ programs · global</p>
           <p class="product-desc">Designed and ran 10+ programs teaching non-technical users to build their own automations. 100+ training sessions. Career changers. The no-code mission at scale.</p>
-        </div>
+        </a>
+
+        <a href="https://www.uipath.com/blog/product-and-updates/introducing-uipath-studiox" target="_blank" rel="noopener" class="product-card">
+          <svg class="product-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          <h3 class="product-name">StudioX</h3>
+          <p class="product-meta">UiPath · co-created · before the no-code category existed</p>
+          <p class="product-desc">UiPath's near-no-code automation builder for business users. Co-built with the product team after identifying the product was too technical for non-developers. Offered the PM role for this. Turned it down - wasn't done in the field yet.</p>
+        </a>
 
         <div class="product-card">
-          <h3 class="product-name">Near-No-Code Automation Builder</h3>
-          <p class="product-meta">UiPath · co-created · before the category</p>
-          <p class="product-desc">Built with the product team after identifying the product was too technical for business users. Offered the PM role for this. Turned it down - wasn't done in the field yet.</p>
+          <h3 class="product-name">Global Error Handler for StudioX</h3>
+          <p class="product-meta">UiPath · 2020</p>
+          <p class="product-desc">First step toward self-healing automation. A Global Error Handler designed for non-technical builders, shipped in StudioX Community version. Years before "self-healing" was a product category - and the conceptual ancestor of the Healing Agent.</p>
         </div>
 
-        <div class="product-card">
-          <h3 class="product-name">Santa Video Generator</h3>
+        <a href="https://mesajdelamos.ro/" target="_blank" rel="noopener" class="product-card">
+          <svg class="product-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          <h3 class="product-name">mesajdelamos.ro</h3>
           <p class="product-meta">Built on Lovable · solo · personal time</p>
-          <p class="product-desc">Personalized Santa video generator. Real customers. Real revenue. Built end-to-end using AI-powered development tools. Proof that the mission works: anyone can build software.</p>
-        </div>
+          <p class="product-desc">Personalized Santa video generator (Romanian). Real customers. Real revenue. Built end-to-end using AI-powered development tools. Proof that the mission works: anyone can build software.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -935,15 +1238,49 @@
           <p class="number-label">Healing Agent recommendation acceptance · Private Preview</p>
         </div>
         <div class="number-item">
-          <p class="number-value">100+</p>
-          <p class="number-label">Training sessions delivered globally</p>
+          <p class="number-value">25+</p>
+          <p class="number-label">Fortune 500 &amp; government clients enabled at UiPath</p>
         </div>
         <div class="number-item">
-          <p class="number-value">10+</p>
-          <p class="number-label">Citizen Developer programs built at UiPath</p>
+          <p class="number-value">300+</p>
+          <p class="number-label">Enterprise licenses activated at a single client (Generali)</p>
         </div>
       </div>
       <p class="numbers-caption">Numbers I'm proud of.</p>
+    </div>
+  </section>
+
+  <!-- ── SELECTED CLIENTS ── -->
+  <section class="clients" id="clients">
+    <div class="container">
+      <p class="section-label">Worked With</p>
+      <h2 class="section-title">Selected Clients</h2>
+      <p class="section-subtitle">Enterprise and government engagements led during my UiPath years - from Romanian state institutions to Fortune 500.</p>
+
+      <div class="clients-grid">
+        <span class="client-name">Mayo Clinic <span class="client-tag">Healthcare</span></span>
+        <span class="client-name">Generali <span class="client-tag">Insurance</span></span>
+        <span class="client-name">Wayfair <span class="client-tag">Retail</span></span>
+        <span class="client-name">Fujitsu <span class="client-tag">Technology</span></span>
+        <span class="client-name">FanDuel <span class="client-tag">Gaming</span></span>
+        <span class="client-name">Vodacom <span class="client-tag">Telecom</span></span>
+        <span class="client-name">Auchan <span class="client-tag">Retail</span></span>
+        <span class="client-name">Ericsson <span class="client-tag">Telecom</span></span>
+        <span class="client-name">GE <span class="client-tag">Industrial</span></span>
+        <span class="client-name">Pearson <span class="client-tag">Education</span></span>
+        <span class="client-name">Merck <span class="client-tag">Pharma</span></span>
+        <span class="client-name">Takeda <span class="client-tag">Pharma</span></span>
+        <span class="client-name">Swisscom <span class="client-tag">Telecom</span></span>
+        <span class="client-name">Tetrapak <span class="client-tag">Manufacturing</span></span>
+        <span class="client-name">Unicredit <span class="client-tag">Banking</span></span>
+        <span class="client-name">Changi Airport <span class="client-tag">Aviation</span></span>
+        <span class="client-name">EY <span class="client-tag">Consulting</span></span>
+        <span class="client-name">Rompetrol <span class="client-tag">Energy</span></span>
+        <span class="client-name">University of Liverpool <span class="client-tag">Education</span></span>
+        <span class="client-name">ANPIS Romania <span class="client-tag">Government</span></span>
+      </div>
+
+      <p class="clients-note">Plus 25+ enterprise and government engagements globally.</p>
     </div>
   </section>
 
@@ -965,7 +1302,7 @@
   <!-- ── SPEAKING & COMMUNITY ── -->
   <section class="speaking" id="speaking">
     <div class="container">
-      <p class="section-label">Public</p>
+      <p class="section-label">Speaking</p>
       <h2 class="section-title">Speaking &amp; Community</h2>
       <div class="speaking-grid">
 
@@ -1021,6 +1358,41 @@
     </div>
   </section>
 
+  <!-- ── WRITING ── -->
+  <section class="writing" id="writing">
+    <div class="container">
+      <p class="section-label">Writing</p>
+      <h2 class="section-title">Notes &amp; Thinking</h2>
+      <p class="section-subtitle">Long-form thoughts on agentic AI, product, and the people building both.</p>
+
+      <div class="writing-grid">
+        <!-- TODO: Replace these placeholder cards with real posts. Pattern: a tag, a title, an excerpt, and a meta line. -->
+        <a href="#" class="writing-card placeholder">
+          <span class="writing-tag">Coming soon</span>
+          <h3 class="writing-title">First post in progress</h3>
+          <p class="writing-excerpt">Working on a piece about why agentic AI products fail at the surface, not the model. More soon.</p>
+          <p class="writing-meta">Drafting</p>
+        </a>
+
+        <a href="#" class="writing-card placeholder">
+          <span class="writing-tag">Coming soon</span>
+          <h3 class="writing-title">Notes from the field</h3>
+          <p class="writing-excerpt">Lessons from years of forward-deployed work. What customer transcripts taught me that no roadmap could.</p>
+          <p class="writing-meta">Drafting</p>
+        </a>
+
+        <a href="#" class="writing-card placeholder">
+          <span class="writing-tag">Coming soon</span>
+          <h3 class="writing-title">Building the digital workforce</h3>
+          <p class="writing-excerpt">On the language we use for AI workers, and why it shapes what users are willing to trust.</p>
+          <p class="writing-meta">Drafting</p>
+        </a>
+      </div>
+
+      <p class="writing-coming">More posts coming soon. Want a heads-up when something publishes? <a href="mailto:teodorabaciu16@gmail.com" style="color:var(--accent-coral);">Drop me a note.</a></p>
+    </div>
+  </section>
+
   <!-- ── WHAT I BELIEVE ── -->
   <section class="conviction" id="conviction">
     <div class="container">
@@ -1036,11 +1408,38 @@
     </div>
   </section>
 
-  <!-- ── WHAT CLAUDE SAYS ── -->
-  <section class="claude-section" id="claude-says">
+  <!-- ── TESTIMONIALS ── -->
+  <section class="claude-section" id="testimonials">
     <div class="container">
-      <p class="section-label">A Different Kind of Reference</p>
-      <h2 class="section-title">What Claude Says</h2>
+      <p class="section-label">References</p>
+      <h2 class="section-title">What People Say</h2>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-human">
+          <p class="testimonial-quote">&ldquo;Teodora is the embodiment of UiPath's values. She carefully considered customer expectations, was bold and assertively recommended the best approach, and was fast to adjust. Very curious and a relentless researcher, passionate about her work and very generous in sharing her knowledge.&rdquo;</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-avatar">L</div>
+            <div class="testimonial-meta">
+              <strong>Larisa</strong>
+              <span>Project Manager, Fujitsu engagement &middot; UiPath</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-human">
+          <p class="testimonial-quote">&ldquo;Working with Teodora is always a pleasure. She is one of my go-to persons when it comes to delivery. She often goes the extra mile. I appreciate her work ethic, her empathy when dealing with citizen developers, and her technical skills.&rdquo;</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-avatar">H</div>
+            <div class="testimonial-meta">
+              <strong>Horia Stefan</strong>
+              <span>Training &amp; Delivery Lead &middot; UiPath</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="testimonials-divider">And one different kind of reference</p>
+
       <div class="claude-note">
         <div class="claude-note-header">
           <div class="claude-avatar">C</div>
@@ -1063,7 +1462,7 @@
   <!-- ── SKILLS ── -->
   <section class="skills" id="skills">
     <div class="container">
-      <p class="section-label">Capabilities</p>
+      <p class="section-label">Toolkit</p>
       <h2 class="section-title">Skills</h2>
       <div class="skills-grid">
         <div class="skill-col">
@@ -1107,7 +1506,7 @@
   <!-- ── EDUCATION ── -->
   <section class="education" id="education">
     <div class="container">
-      <p class="section-label">Academic</p>
+      <p class="section-label">Studied</p>
       <h2 class="section-title">Education</h2>
       <div class="education-grid">
         <div class="edu-card">
@@ -1127,7 +1526,10 @@
   <section class="footer" id="footer">
     <div class="container">
       <h2 class="footer-headline">I've been in the field, on the stage, and in the product spec.<br>Let's talk.</h2>
-      <a href="mailto:teodorabaciu16@gmail.com" class="footer-cta">Email Teodora</a>
+      <div class="footer-actions">
+        <a href="mailto:teodorabaciu16@gmail.com" class="footer-cta">Email Teodora</a>
+        <a href="Teodora-Baciu-Resume-2026.pdf" class="footer-cv" download="Teodora-Baciu-Resume-2026.pdf" aria-label="Download Resume"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Resume</a>
+      </div>
       <div class="footer-meta">
         <p>Based in Bucharest, Romania · Open to remote roles globally</p>
         <p>European timezone · Happy to travel for on-sites</p>
