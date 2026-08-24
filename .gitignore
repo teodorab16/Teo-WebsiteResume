@@ -10,3 +10,6 @@ TeodoraBaciu - performance evaluations/
 .vscode/
 .idea/
 *.swp
+
+# Private planning docs - never commit (public repo)
+REBUILD_PLAN.md
