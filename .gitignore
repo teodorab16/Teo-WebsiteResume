@@ -13,3 +13,7 @@ TeodoraBaciu - performance evaluations/
 
 # Private planning docs - never commit (public repo)
 REBUILD_PLAN.md
+
+# Private working files - never commit (repo is public and Pages serves everything)
+Resources/
+Screenshot*.png
