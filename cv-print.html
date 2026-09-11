@@ -75,27 +75,24 @@
       line-height: 1.5;
     }
 
-    .header-right {
-      text-align: right;
-      font-size: 8.5pt;
+    .header-right { flex: none; }
+    .contact-line {
+      font-size: 8pt;
       color: var(--muted);
-      line-height: 1.65;
+      margin: 4px 0 8px;
+      line-height: 1.5;
     }
+    .contact-line a { color: var(--muted); text-decoration: none; }
+    .contact-line a.website { color: var(--coral); font-weight: 700; }
 
 
-    .header-right .website {
-      display: inline-block;
-      font-weight: 700;
-      color: var(--coral);
-    }
 
     .header-photo {
-      width: 66px;
-      height: 66px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 6px;
-      float: right;
+      flex: none;
     }
 
     /* ── STAT STRIP ── */
@@ -290,15 +287,11 @@
       <div class="header-left">
         <h1>Teodora Baciu</h1>
         <p class="subtitle">Principal Product Manager - Agentic AI &amp; Enterprise Automation</p>
+        <p class="contact-line"><a href="mailto:teodorabaciu16@gmail.com">teodorabaciu16@gmail.com</a> &middot; <a href="https://linkedin.com/in/teodora-baciu">linkedin.com/in/teodora-baciu</a> &middot; <a href="https://teodorabaciu.com" class="website">teodorabaciu.com</a> &middot; Bucharest &middot; Remote (Europe)</p>
         <p class="summary">First PM at EverWorker (agentic AI platform): <strong>$0 &rarr; $1.4M ARR</strong> (Q1 FY27) and <strong>2 &rarr; 16 customers running the platform themselves</strong> in under a year. Previously PM at UiPath on Autopilot for Developers (20,000+ users, 70%+ acceptance) and Healing Agent, after 7 years as developer, forward deployed engineer, and trainer - from pre-IPO startup to global leader.</p>
       </div>
       <div class="header-right">
         <img src="teodora-photo.jpg" alt="Teodora Baciu" class="header-photo">
-        <br>
-        <a href="mailto:teodorabaciu16@gmail.com">teodorabaciu16@gmail.com</a><br>
-        Bucharest, Romania &middot; Remote (global)<br>
-        <a href="https://linkedin.com/in/teodora-baciu">linkedin.com/in/teodora-baciu</a><br>
-        <a href="https://teodorabaciu.com" class="website">teodorabaciu.com</a>
       </div>
     </div>
 
