@@ -216,10 +216,11 @@
 
     /* ── SPEAKING ── */
     .speaking-item {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 4px;
+      display: grid;
+      grid-template-columns: 64px 168px 1fr;
+      column-gap: 12px;
+      align-items: start;
+      margin-bottom: 5px;
       page-break-inside: avoid;
     }
 
@@ -232,14 +233,16 @@
       border-radius: 10px;
       color: white;
       white-space: nowrap;
+      text-align: center;
+      display: block;
       background: var(--coral);
       flex-shrink: 0;
       width: 74px;
       text-align: center;
     }
 
-    .speaking-item .title { font-weight: 600; font-size: 8.5pt; }
-    .speaking-item .detail { font-size: 8pt; color: var(--muted); }
+    .speaking-item .title { font-weight: 600; font-size: 8.5pt; line-height: 1.35; }
+    .speaking-item .detail { font-size: 8pt; color: var(--muted); line-height: 1.35; }
 
     /* ── EDUCATION & CERTS ── */
     .edu-item { margin-bottom: 7px; }
@@ -412,37 +415,37 @@
       <div class="speaking-item">
         <span class="speaking-badge">Keynote</span>
         <span class="title">"The Future of Business Is Robotic and Agentic"</span>
-        <span class="detail">- UiPath AI-Powered Automation Summit, Milano</span>
+        <span class="detail">UiPath AI-Powered Automation Summit, Milano</span>
       </div>
       <div class="speaking-item">
         <span class="speaking-badge">Speaker</span>
         <span class="title">UiPath DevCon 2024</span>
-        <span class="detail">- Developer Conference, Bengaluru, India</span>
+        <span class="detail">Developer Conference, Bengaluru, India</span>
       </div>
       <div class="speaking-item">
         <span class="speaking-badge">Trainer</span>
         <span class="title">RPA Curriculum &amp; Automation Courses</span>
-        <span class="detail">- LEADERS Foundation &amp; 4MAYO Academy &middot; mentored 100+ professionals into technical careers</span>
+        <span class="detail">LEADERS Foundation &amp; 4MAYO Academy &middot; mentored 100+ professionals into technical careers</span>
       </div>
       <div class="speaking-item">
         <span class="speaking-badge">Community</span>
         <span class="title">Product Makers Romania</span>
-        <span class="detail">- Tech &amp; Operations lead; organized events and mentored members &middot; largest product community in Romania</span>
+        <span class="detail">Tech &amp; Operations lead; organized events and mentored members &middot; largest product community in Romania</span>
       </div>
       <div class="speaking-item">
         <span class="speaking-badge">Creator</span>
         <span class="title"><a href="https://www.youtube.com/c/roboteo">RoboTeo YouTube channel</a></span>
-        <span class="detail">- automation tutorials for non-technical audiences</span>
+        <span class="detail">automation tutorials for non-technical audiences</span>
       </div>
       <div class="speaking-item">
         <span class="speaking-badge">Builder</span>
         <span class="title"><a href="https://mesajdelamos.ro/">mesajdelamos.ro</a></span>
-        <span class="detail">- AI-built Santa video generator, solo, real customers &amp; revenue</span>
+        <span class="detail">AI-built Santa video generator, solo, real customers &amp; revenue</span>
       </div>
       <div class="speaking-item">
         <span class="speaking-badge">Builder</span>
         <span class="title"><a href="https://the-big-day.github.io/">The Big Day</a></span>
-        <span class="detail">- wedding-planning platform: seat planner, planning tools, RSVP site &middot; solo, private beta</span>
+        <span class="detail">wedding-planning platform: seat planner, planning tools, RSVP site &middot; solo, private beta</span>
       </div>
     </div>
 
